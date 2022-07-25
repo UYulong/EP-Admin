@@ -1,0 +1,15 @@
+// normalize.css
+@import "normalize.css";
+
+html,
+body,
+#app,
+.common-layout,
+.el-container {
+  height: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
