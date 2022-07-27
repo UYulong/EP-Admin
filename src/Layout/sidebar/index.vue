@@ -18,8 +18,6 @@ import { project_logo_isShow } from "../../utils/settings";
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/var/project.scss";
-
 .sidebar-wrap {
   height: 60px;
   margin: 0;

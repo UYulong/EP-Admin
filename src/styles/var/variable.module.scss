@@ -1,0 +1,12 @@
+// 项目有关 css 配置
+$sideBarWidth: 200; // 侧边栏宽度
+$sideBarBg: #041427; // 侧边栏背景颜色 aside
+$menuTextColor: #bbb; // menu 背景颜色
+$menuActiveTextColor: #ffd04b; // menu 激活时 文字颜色
+
+:export {
+  sideBarWidth: $sideBarWidth;
+  sideBarBg: $sideBarBg;
+  menuTextColor: $menuTextColor;
+  menuActiveTextColor: $menuActiveTextColor;
+}

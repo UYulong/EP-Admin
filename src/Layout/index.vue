@@ -24,19 +24,20 @@
 import useSetCollapse from "../store/modules/side"; // store
 import BarCon from "./header/barCon/barCon"; // 面包屑导航组件
 import SideBar from "./sidebar/index.vue"; // 侧边栏组件
-const store = useSetCollapse();
 
+// 获取侧边栏当前宽度
+const store = useSetCollapse();
 const asideWidth = computed(() => {
   return store.sideWidth + "px";
 });
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/var/project.scss";
+@import "../styles/var/variable.module.scss";
 
 .common-layout {
   .aside_wrap {
-    background-color: $side_bar_bg;
+    background-color: $sideBarBg;
   }
 
   .header_wrap {

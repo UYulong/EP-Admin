@@ -1,6 +1,12 @@
 // 路由主入口
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
+declare module "vue-router" {
+  interface RouteMeta {
+    title: string;
+  }
+}
+
 // 布局
 import Layout from "../Layout/index.vue";
 
@@ -10,7 +16,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     path: "/login",
     component: () => import("../views/login/index.vue"),
     meta: { title: "登录" },
-    // hidden: true,
+    hidden: true,
   },
 
   {
@@ -18,6 +24,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     component: Layout,
     redirect: "/home",
     meta: { title: "Dashboard", icon: "el-icon-home" },
+    hidden: false,
     children: [
       {
         path: "home",
@@ -33,12 +40,41 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     component: Layout,
     redirect: "/list/basic-list",
     meta: { title: "列表页面", icon: "el-icon-home" },
+    hidden: false,
     children: [
       {
         path: "basic-list",
         name: "Basic-List",
         component: () => import("../views/list/index.vue"),
         meta: { title: "基础列表", icon: "el-icon-home" },
+      },
+
+      {
+        path: "basic-list1",
+        name: "Basic-List1",
+        component: () => import("../views/list/list.vue"),
+        meta: { title: "基础列表1", icon: "el-icon-home" },
+      },
+    ],
+  },
+
+  {
+    path: "/form",
+    redirect: "/form/basic-form",
+    component: Layout,
+    meta: {
+      title: "表单页面",
+      icon: "el-icon-home",
+    },
+    children: [
+      {
+        path: "basic-form",
+        name: "Basic-Form",
+        component: () => import("views/form/index.vue"),
+        meta: {
+          title: "表单详情",
+          icon: "el-icon-home",
+        },
       },
     ],
   },
