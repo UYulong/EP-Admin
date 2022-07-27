@@ -2,7 +2,7 @@
 import { TOKEN_KEY } from "./settings";
 
 export function getToken() {
-  return localStorage.getItem(TOKEN_KEY);
+  return localStorage.getItem(TOKEN_KEY) || null;
 }
 
 export function setToken(key: string) {

@@ -3,6 +3,6 @@ export interface LoginForm {
   userPassword: string;
 }
 
-export interface CheckToken {
-  token: string;
+export interface CheckTokenModel {
+  token: string | null;
 }

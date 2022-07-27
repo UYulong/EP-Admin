@@ -1,5 +1,5 @@
 // 路由主入口
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 // 布局
 import Layout from "../Layout/index.vue";
@@ -15,8 +15,8 @@ export const constantRoutes: Array<RouteRecordRaw> = [
 
   {
     path: "/",
-    redirect: "/home",
     component: Layout,
+    redirect: "/home",
     meta: { title: "Dashboard", icon: "el-icon-home" },
     children: [
       {
@@ -30,8 +30,8 @@ export const constantRoutes: Array<RouteRecordRaw> = [
 
   {
     path: "/list",
-    redirect: "/list/basic-list",
     component: Layout,
+    redirect: "/list/basic-list",
     meta: { title: "列表页面", icon: "el-icon-home" },
     children: [
       {
@@ -73,7 +73,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: constantRoutes,
 });
 

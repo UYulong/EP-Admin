@@ -1,7 +1,7 @@
 import { defineStore } from "pinia"; // 登录相关 store
 import { getUserRoles, login } from "../../apis/mock/login"; // 登录api
 import { asyncRoutes } from "../../router"; // 导入 静态路由 和 动态路由
-import { setToken } from "../../utils/storage"; // 设置token方法
+import { getToken, setToken } from "../../utils/storage"; // 设置token方法
 import {
   userInfoModel,
   userLoginFormModel,
@@ -13,7 +13,7 @@ const useLoginStore = defineStore({
 
   state: () => {
     return {
-      token: "",
+      token: getToken(),
       roles: [],
     };
   },
