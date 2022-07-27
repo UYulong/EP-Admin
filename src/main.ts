@@ -15,6 +15,9 @@ import "element-plus/dist/index.css";
 // 导入全局样式
 import "./styles/reset.scss";
 
+// 权限处理
+import "./utils/permission";
+
 const app = createApp(App);
 
 // 注册Icon

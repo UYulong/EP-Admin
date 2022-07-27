@@ -1,4 +1,4 @@
-import { login } from "../../apis/mock/login";
+import { router } from "../../router";
 import useLoginStore from "../../store/modules/login";
 import { userLoginForm } from "./model/userForm.modle";
 
@@ -13,9 +13,14 @@ export const useLogin = () => {
   });
 
   async function handelSubmitEvent() {
+    // 表单校验...
+
     // store.dispatch('login', userState.userLoginForm)
-    const { data } = await login(userLoginForm);
+
+    const data = await loginStore.login(userLoginForm);
+    // const { data } = await login(userLoginForm);
     console.log(data);
+    router.push("/");
   }
 
   return { userLoginForm, handelSubmitEvent };

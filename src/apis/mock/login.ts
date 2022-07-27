@@ -1,8 +1,9 @@
 import requset from "../../utils/request";
-import { LoginForm } from "../types/login";
+import { CheckToken, LoginForm } from "../types/login";
 
 enum Api {
   LOGIN_URL = "/login",
+  GET_USER_ROLE = "/getRoles",
 }
 
 const login = (params: LoginForm) => {
@@ -13,4 +14,12 @@ const login = (params: LoginForm) => {
   });
 };
 
-export { login };
+const getUserRoles = (params: CheckToken) => {
+  return requset({
+    url: Api.GET_USER_ROLE,
+    method: "get",
+    params,
+  });
+};
+
+export { login, getUserRoles };
