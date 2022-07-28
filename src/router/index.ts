@@ -8,7 +8,14 @@ declare module "vue-router" {
 }
 
 // 布局
-import Layout from "../Layout/index.vue";
+import Layout from "layout/index.vue";
+
+// 导入 模块路由
+import Abnormal from "./modules/abnormal"; // 异常页面
+import About from "./modules/about"; // 关于页面
+import Comps from "./modules/comps"; // 自定义组件展示页面
+import Docs from "./modules/docs"; // 文档页面
+import FormRoutes from "./modules/form"; // 表单页面
 
 // 静态路由
 export const constantRoutes: Array<RouteRecordRaw> = [
@@ -29,8 +36,15 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       {
         path: "home",
         name: "Home",
-        component: () => import("../views/dashboard/index.vue"),
+        // component: () => import("../views/dashboard/index.vue"),
+        component: () => import("@/views/dashboard/main-conrol/index.vue"),
         meta: { title: "主控台", icon: "el-icon-home" },
+      },
+      {
+        path: "workspace",
+        name: "Workspace",
+        component: () => import("@/views/dashboard/work-control/index.vue"),
+        meta: { title: "工作台", icon: "el-icon-home" },
       },
     ],
   },
@@ -45,39 +59,17 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       {
         path: "basic-list",
         name: "Basic-List",
-        component: () => import("../views/list/index.vue"),
+        component: () => import("@/views/list/base-list/index.vue"),
         meta: { title: "基础列表", icon: "el-icon-home" },
       },
-
-      {
-        path: "basic-list1",
-        name: "Basic-List1",
-        component: () => import("../views/list/list.vue"),
-        meta: { title: "基础列表1", icon: "el-icon-home" },
-      },
     ],
   },
 
-  {
-    path: "/form",
-    redirect: "/form/basic-form",
-    component: Layout,
-    meta: {
-      title: "表单页面",
-      icon: "el-icon-home",
-    },
-    children: [
-      {
-        path: "basic-form",
-        name: "Basic-Form",
-        component: () => import("views/form/index.vue"),
-        meta: {
-          title: "表单详情",
-          icon: "el-icon-home",
-        },
-      },
-    ],
-  },
+  FormRoutes,
+  Abnormal,
+  About,
+  Docs,
+  Comps,
 ];
 
 // 异步路由

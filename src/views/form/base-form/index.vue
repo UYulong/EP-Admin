@@ -1,5 +1,5 @@
 <template>
-  <div>list page</div>
+  <div>base-form_page</div>
 </template>
 
 <script lang="ts" setup></script>

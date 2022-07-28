@@ -1,6 +1,5 @@
 <template>
-  <!-- form page -->
-  <div>form page</div>
+  <div>500_page</div>
 </template>
 
 <script lang="ts" setup></script>

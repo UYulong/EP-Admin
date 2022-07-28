@@ -32,7 +32,7 @@ const props = defineProps({
     type: String,
   },
 });
-console.log(props.basePath);
+// console.log(props.basePath);
 
 // 菜单路径解析
 const resolvePath = (routePath: string) => {

@@ -1,6 +1,5 @@
 <template>
-  <!-- Dashboard page -->
-  <div>Dashboard_page</div>
+  <div>comps_upload</div>
 </template>
 
 <script lang="ts" setup></script>
