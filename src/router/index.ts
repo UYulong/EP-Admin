@@ -37,7 +37,6 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       {
         path: "home",
         name: "Home",
-        // component: () => import("../views/dashboard/index.vue"),
         component: () => import("@/views/dashboard/main-conrol/index.vue"),
         meta: { title: "主控台" },
       },
