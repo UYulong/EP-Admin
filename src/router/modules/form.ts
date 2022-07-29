@@ -17,7 +17,6 @@ export default {
       component: () => import("views/form/base-form/index.vue"),
       meta: {
         title: "基础表单",
-        icon: "el-icon-home",
       },
     },
     {
@@ -26,7 +25,6 @@ export default {
       component: () => import("views/form/step-form/index.vue"),
       meta: {
         title: "分步表单",
-        icon: "el-icon-home",
       },
     },
     {
@@ -35,7 +33,6 @@ export default {
       component: () => import("views/form/form-detail/index.vue"),
       meta: {
         title: "表单详情",
-        icon: "el-icon-home",
       },
     },
   ],

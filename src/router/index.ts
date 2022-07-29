@@ -16,6 +16,7 @@ import About from "./modules/about"; // 关于页面
 import Comps from "./modules/comps"; // 自定义组件展示页面
 import Docs from "./modules/docs"; // 文档页面
 import FormRoutes from "./modules/form"; // 表单页面
+import List from "./modules/list"; // 列表页面
 
 // 静态路由
 export const constantRoutes: Array<RouteRecordRaw> = [
@@ -30,7 +31,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     path: "/",
     component: Layout,
     redirect: "/home",
-    meta: { title: "Dashboard", icon: "el-icon-home" },
+    meta: { title: "Dashboard", icon: "Timer" },
     hidden: false,
     children: [
       {
@@ -38,33 +39,18 @@ export const constantRoutes: Array<RouteRecordRaw> = [
         name: "Home",
         // component: () => import("../views/dashboard/index.vue"),
         component: () => import("@/views/dashboard/main-conrol/index.vue"),
-        meta: { title: "主控台", icon: "el-icon-home" },
+        meta: { title: "主控台" },
       },
       {
         path: "workspace",
         name: "Workspace",
         component: () => import("@/views/dashboard/work-control/index.vue"),
-        meta: { title: "工作台", icon: "el-icon-home" },
+        meta: { title: "工作台" },
       },
     ],
   },
 
-  {
-    path: "/list",
-    component: Layout,
-    redirect: "/list/basic-list",
-    meta: { title: "列表页面", icon: "el-icon-home" },
-    hidden: false,
-    children: [
-      {
-        path: "basic-list",
-        name: "Basic-List",
-        component: () => import("@/views/list/base-list/index.vue"),
-        meta: { title: "基础列表", icon: "el-icon-home" },
-      },
-    ],
-  },
-
+  List,
   FormRoutes,
   Abnormal,
   About,
