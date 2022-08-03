@@ -15,7 +15,6 @@ export default defineComponent({
 
     // 获取当前路由信息
     const route = useRoute();
-    console.log(route.matched[0].meta.title);
 
     return () => (
       <div class={"bar_control_wrap"}>
@@ -31,12 +30,6 @@ export default defineComponent({
               {r.meta.title ? r.meta.title : null}
             </el-breadcrumb-item>
           ))}
-          {/* <el-breadcrumb-item>homepage</el-breadcrumb-item>
-          <el-breadcrumb-item>
-            <a href="/">promotion management</a>
-          </el-breadcrumb-item>
-          <el-breadcrumb-item>promotion list</el-breadcrumb-item>
-          <el-breadcrumb-item>promotion detail</el-breadcrumb-item> */}
         </el-breadcrumb>
       </div>
     );

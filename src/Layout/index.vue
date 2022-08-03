@@ -3,16 +3,22 @@
   <div class="common-layout">
     <el-container>
       <el-aside :width="asideWidth" class="aside_wrap">
+        <!-- 侧边栏 -->
         <SideBar></SideBar>
       </el-aside>
       <el-container>
         <el-header class="header_wrap">
           <div class="bar_setting">
+            <!-- 面包屑 -->
             <BarCon></BarCon>
           </div>
-          <div class="personal_setting">2</div>
+          <div class="personal_setting">
+            <!-- 个人中心 -->
+            <Info></Info>
+          </div>
         </el-header>
         <el-main>
+          <!-- 主区 -->
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -22,7 +28,8 @@
 
 <script lang="ts" setup>
 import useSetCollapse from "../store/modules/side"; // store
-import BarCon from "./header/barCon/barCon"; // 面包屑导航组件
+import BarCon from "./header/barCon/barCon"; // 导航栏左侧 面包屑导航组件
+import Info from "./header/info/index.vue"; // 导航栏右侧 个人中心模块
 import SideBar from "./sidebar/index.vue"; // 侧边栏组件
 
 // 获取侧边栏当前宽度
