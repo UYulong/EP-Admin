@@ -1,7 +1,6 @@
 import { defineComponent } from "vue";
 
 // logo source
-// import logoSrc from "../../../assets/logo.png";
 import logoSrc from "../../../assets/logo.svg";
 
 // settings config
@@ -19,13 +18,22 @@ export default defineComponent({
 
     return () => (
       <div class={"logo_wrap"}>
-        <p class={"logo_wrap_img"}>
-          <img src={logoSrc}></img>
+        {/* logo */}
+        <img class={"logo_wrap_img"} src={logoSrc}></img>
+
+        {/* text */}
+        <h1 v-show={!store.isCollapse} class={"logo_wrap_text"}>
+          {project_title}
+        </h1>
+
+        {/* <p class={"logo_wrap_img"}>
+          <img class={"logo"} src={logoSrc}></img>
+          123
         </p>
 
-        <p v-show={!store.isCollapse} class={"logo_wrap_text"}>
-          <span>{project_title}</span>
-        </p>
+        <h1 v-show={!store.isCollapse} class={"logo_wrap_text"}>
+          {project_title}
+        </h1> */}
       </div>
     );
   },

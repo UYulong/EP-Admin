@@ -12,26 +12,32 @@
 
     <!-- 全屏展示 -->
     <div class="personal_full">
-      <Fullscreen></Fullscreen>
+      <Fullscreen />
     </div>
 
     <!-- 头像 -->
     <div class="personal_avatar">
-      <Avatar></Avatar>
+      <AvatarBox />
     </div>
 
     <!-- 项目配置 -->
     <div class="personal_setting">
-      <Setting></Setting>
+      <Setting />
     </div>
+
+    <!-- 项目配置 抽屉 -->
+    <Drawer />
   </div>
 </template>
 
 <script lang="ts" setup name="Personal">
-import Avatar from "./component/avatar"; // 头像组件
-import Fullscreen from "./component/fullscreen"; // 全屏组件
-import Lockscreen from "./component/lockscreen"; // 锁屏组件
-import Setting from "./component/setting"; // 项目配置组件
+import {
+  AvatarBox,
+  Drawer,
+  Fullscreen,
+  Lockscreen,
+  Setting,
+} from "./component";
 </script>
 
 <style lang="scss" scoped>

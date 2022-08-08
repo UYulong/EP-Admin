@@ -1,23 +1,23 @@
 .logo_wrap {
-  height: 100%;
-  padding: 0 22px;
+  cursor: pointer;
+  height: 60px;
+  padding: 0 28px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
 
   .logo_wrap_img {
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    img {
-      height: 30px;
-    }
+    width: auto;
+    height: 30px;
   }
 
   .logo_wrap_text {
-    font-size: 700;
-    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 6px;
+    font-weight: 700;
+    font-size: 18px;
     color: antiquewhite;
   }
 }

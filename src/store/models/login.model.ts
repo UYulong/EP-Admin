@@ -18,3 +18,11 @@ export interface userInfoModel {
  * @description: 路由表过滤所需参数
  */
 export type userRoles = string[];
+
+/**
+ * @description: 登录store
+ */
+export type loginStateModel = {
+  token: string | null;
+  roles: string[];
+};

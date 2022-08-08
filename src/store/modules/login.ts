@@ -3,15 +3,16 @@ import { getUserRoles, login } from "../../apis/mock/login"; // 登录api
 import { asyncRoutes } from "../../router"; // 导入 静态路由 和 动态路由
 import { getToken, setToken } from "../../utils/storage"; // 设置token方法
 import {
+  loginStateModel,
   userInfoModel,
   userLoginFormModel,
   userRoles,
-} from "../models/login.modle";
+} from "../models/login.model";
 
 const useLoginStore = defineStore({
   id: "login",
 
-  state: () => {
+  state: (): loginStateModel => {
     return {
       token: getToken(),
       roles: [],
