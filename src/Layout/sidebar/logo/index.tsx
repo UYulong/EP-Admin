@@ -25,15 +25,6 @@ export default defineComponent({
         <h1 v-show={!store.isCollapse} class={"logo_wrap_text"}>
           {project_title}
         </h1>
-
-        {/* <p class={"logo_wrap_img"}>
-          <img class={"logo"} src={logoSrc}></img>
-          123
-        </p>
-
-        <h1 v-show={!store.isCollapse} class={"logo_wrap_text"}>
-          {project_title}
-        </h1> */}
       </div>
     );
   },

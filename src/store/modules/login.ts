@@ -1,7 +1,7 @@
 import { defineStore } from "pinia"; // 登录相关 store
 import { getUserRoles, login } from "../../apis/mock/login"; // 登录api
 import { asyncRoutes } from "../../router"; // 导入 静态路由 和 动态路由
-import { getToken, setToken } from "../../utils/storage"; // 设置token方法
+import { clearToken, getToken, setToken } from "../../utils/storage"; // 设置token方法
 import {
   loginStateModel,
   userInfoModel,
@@ -30,9 +30,9 @@ const useLoginStore = defineStore({
     login(loginForm: userLoginFormModel) {
       return new Promise(async (resolve, reject) => {
         try {
-          const { data } = await login(loginForm);
-          this.setToken(data.token);
-          resolve(data);
+          const res = await login(loginForm);
+          this.setToken(res.token);
+          resolve(res);
         } catch (error) {
           reject(error);
         }
@@ -49,13 +49,20 @@ const useLoginStore = defineStore({
     getRolesInfo(): Promise<userInfoModel> {
       return new Promise(async (resolve, reject) => {
         try {
-          const { data } = await getUserRoles({ token: this.token });
+          const data = await getUserRoles({ token: this.token });
           this.roles = data.data.roles;
-          resolve(data.data);
+          resolve(data.data.roles);
         } catch (error) {
           reject(error);
         }
       });
+    },
+
+    // 登出方法
+    logout() {
+      console.log("logout");
+      clearToken(); // 清除浏览器中的token
+      this.roles = []; // 清空store中的数据
     },
 
     /**
@@ -105,11 +112,6 @@ const useLoginStore = defineStore({
 
         resolve(accessedRoutes);
       });
-    },
-
-    // 登出方法
-    logout() {
-      console.log("logout");
     },
   },
 });

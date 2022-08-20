@@ -6,17 +6,17 @@ export default [
   {
     url: "/api/getRoles",
     method: "get",
-    response: ({ query }) => {
-      const { token } = query;
+    response: ({ headers }) => {
+      const { authorisation } = headers;
 
-      if (token && token === userToken) {
+      if (authorisation && authorisation === userToken) {
         return {
           code: 0,
           message: "获取用户角色成功!",
           data: {
             roles: ["admin"],
           },
-          token: token,
+          token: authorisation,
         };
       }
 

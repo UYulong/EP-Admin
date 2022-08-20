@@ -39,7 +39,7 @@ router.beforeEach(async (to, from, next) => {
       } else {
         try {
           // 如果没有查询到本地有用户角色信息，则重新调用接口，获取用户角色信息
-          const { roles } = await loginStore.getRolesInfo();
+          const roles = await loginStore.getRolesInfo();
 
           // generate accessible routes map based on roles
           const accessRoutes = await loginStore.generateRoutes(roles);

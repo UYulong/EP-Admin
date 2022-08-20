@@ -15,11 +15,8 @@ export const useLogin = () => {
   async function handelSubmitEvent() {
     // 表单校验...
 
-    // store.dispatch('login', userState.userLoginForm)
-
     const data = await loginStore.login(userLoginForm);
-    // const { data } = await login(userLoginForm);
-    console.log(data);
+    // console.log(data);
     router.push("/");
   }
 

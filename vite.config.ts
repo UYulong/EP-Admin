@@ -12,13 +12,14 @@ export default defineConfig({
     alias: {
       "@": resolve("src"),
       comps: resolve("src/components"),
-      apis: resolve("src/api"),
+      apis: resolve("src/apis"),
       views: resolve("src/views"),
       routes: resolve("src/router"),
       store: resolve("src/store"),
       utils: resolve("src/utils"),
       styles: resolve("src/styles"),
       layout: resolve("src/Layout"),
+      models: resolve("src/models"),
     },
   },
   plugins: [

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.0.5-beta (2022-08-08)
+
+### ✨ Features
+
+* 个人中心开发
+* logo 位置调整
+
 ## 0.0.4-beta (2022-08-03)
 
 ### ✨ Features
