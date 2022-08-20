@@ -6,48 +6,47 @@
 
 <script lang="ts" setup name="PieChart">
 import * as echarts from "echarts";
-
-interface PieChartDataModel {
-  value: number;
-  name: string;
-}
-
-interface PieDataModel {
-  desc: string;
-  data: PieChartDataModel[];
-}
+import { PieChartDataModel, PieDataModel } from '../../chart.model';
 
 const props = defineProps<{
   pieData: PieDataModel;
 }>();
 
 // pie chart render datas
-let visitsNum = ref([]);
-const pieRef = ref(null); // pie chart dom reference
-let pieChart: echarts.ECharts | null = null; // chart instance
+const pieRef = ref<HTMLDivElement | null>(null); // pie chart dom reference
+let visitsNum = ref([] as Array<PieChartDataModel>); // 图表所需数据
+let chartTitle = ref("本日活跃用户数量") // chart title
+let pieChartInstance: echarts.ECharts | null = null; // chart instance
 
 watchEffect(() => {
-  // console.log(props.pieData);
-  if (props.pieData.data) {
-    visitsNum.value = props.pieData.data;
-    console.log(visitsNum.value);
+  if (props.pieData.data && props.pieData.data.length !== 0) {
 
-    pieChart.setOption({
-      series: [
-        {
-          name: props.pieData.desc,
-          data: visitsNum.value,
+    visitsNum.value = props.pieData.data; //设置数据
+    chartTitle.value = props.pieData.desc //设置标题
+
+    // update
+    if (pieChartInstance) {
+      pieChartInstance.setOption({
+        title: {
+          text: chartTitle.value,
         },
-      ],
-    });
+        series: [
+          {
+            name: props.pieData.desc,
+            data: visitsNum.value,
+          },
+        ],
+      });
+    }
   }
 });
 
+// chart init 
 function initChart() {
-  pieChart = echarts.init(pieRef.value as unknown as HTMLElement);
+  pieChartInstance = echarts.init(pieRef.value as unknown as HTMLElement);
   const option = {
     title: {
-      text: "各端访问量",
+      text: chartTitle.value,
       x: "center",
     },
     color: [
@@ -75,7 +74,7 @@ function initChart() {
       },
     ],
   };
-  pieChart.setOption(option);
+  pieChartInstance.setOption(option);
 }
 
 onMounted(() => {

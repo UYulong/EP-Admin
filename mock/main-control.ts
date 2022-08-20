@@ -126,8 +126,8 @@ export default [
                 ],
 
                 yAxisData: {
-                  salesVolume: [234, 556, 156, 790, 190, 359, 687],
-                  NetProfit: [100, 320, 98, 560, 110, 288, 501],
+                  salesVolume: [12, 23, 34, 22, 67, 12, 33],
+                  NetProfit: [1, 12, 23, 20, 45, 5, 22],
                 },
               },
             },
@@ -137,31 +137,31 @@ export default [
                 desc: "本周活跃用户数量",
                 data: [
                   {
-                    value: 10,
+                    value: 20,
                     name: "WeChat",
                   },
                   {
-                    value: 5,
+                    value: 15,
                     name: "BiliBili",
                   },
                   {
-                    value: 15,
+                    value: 5,
                     name: "QQ",
                   },
                   {
-                    value: 25,
+                    value: 23,
                     name: "FaceBook",
                   },
                   {
-                    value: 20,
+                    value: 40,
                     name: "Tiktok",
                   },
                   {
-                    value: 35,
+                    value: 34,
                     name: "NTES",
                   },
                   {
-                    value: 30,
+                    value: 13,
                     name: "SINA",
                   },
                 ],
@@ -179,8 +179,8 @@ export default [
                 ],
 
                 yAxisData: {
-                  salesVolume: [234, 556, 156, 790, 190, 359, 687],
-                  NetProfit: [100, 320, 98, 560, 110, 288, 501],
+                  salesVolume: [120, 230, 322, 244, 500, 324, 109],
+                  NetProfit: [99, 217, 301, 190, 444, 289, 88],
                 },
               },
             },
@@ -190,31 +190,31 @@ export default [
                 desc: "本月活跃用户数量",
                 data: [
                   {
-                    value: 10,
+                    value: 12,
                     name: "WeChat",
                   },
                   {
-                    value: 5,
+                    value: 8,
                     name: "BiliBili",
                   },
                   {
-                    value: 15,
+                    value: 23,
                     name: "QQ",
                   },
                   {
-                    value: 25,
+                    value: 12,
                     name: "FaceBook",
                   },
                   {
-                    value: 20,
+                    value: 19,
                     name: "Tiktok",
                   },
                   {
-                    value: 35,
+                    value: 33,
                     name: "NTES",
                   },
                   {
-                    value: 30,
+                    value: 24,
                     name: "SINA",
                   },
                 ],
@@ -232,7 +232,7 @@ export default [
 
                 yAxisData: {
                   salesVolume: [234, 556, 156, 790, 190, 359, 687],
-                  NetProfit: [100, 320, 98, 560, 110, 288, 501],
+                  NetProfit: [188, 456, 134, 666, 121, 311, 499],
                 },
               },
             },
@@ -242,31 +242,31 @@ export default [
                 desc: "本年活跃用户数量",
                 data: [
                   {
-                    value: 10,
+                    value: 1,
                     name: "WeChat",
                   },
                   {
-                    value: 5,
+                    value: 8,
                     name: "BiliBili",
                   },
                   {
-                    value: 15,
+                    value: 19,
                     name: "QQ",
                   },
                   {
-                    value: 25,
+                    value: 5,
                     name: "FaceBook",
                   },
                   {
-                    value: 20,
+                    value: 13,
                     name: "Tiktok",
                   },
                   {
-                    value: 35,
+                    value: 8,
                     name: "NTES",
                   },
                   {
-                    value: 30,
+                    value: 13,
                     name: "SINA",
                   },
                 ],
@@ -283,8 +283,8 @@ export default [
                 ],
 
                 yAxisData: {
-                  salesVolume: [234, 556, 156, 790, 190, 359, 687],
-                  NetProfit: [100, 320, 98, 560, 110, 288, 501],
+                  salesVolume: [1122, 3456, 2376, 1290, 2278, 2150, 1960],
+                  NetProfit: [1100, 3123, 2145, 1024, 2156, 1907, 1567],
                 },
               },
             },
