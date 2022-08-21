@@ -80,6 +80,12 @@ function initChart() {
 onMounted(() => {
   initChart();
 });
+
+onBeforeUnmount(() => {
+  if (pieChartInstance) {
+    pieChartInstance.dispose()
+  }
+})
 </script>
 
 <style lang="scss" scoped>

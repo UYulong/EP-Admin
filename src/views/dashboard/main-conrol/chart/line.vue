@@ -7,15 +7,22 @@
 
 <script lang="ts" setup name="LineChart">
 import * as echarts from "echarts";
+import { Ref } from "vue";
+import { LineDataModel } from '../../chart.model';
 
-const lineRef = ref(null); // line chart dom reference
-let lineChart: echarts.ECharts | null = null; // lineChart instance
+const props = defineProps<{
+  lineData: LineDataModel
+}>()
+
+const lineRef = ref<HTMLDivElement | null>(null); // line chart dom reference
+let lineChartInstance: echarts.ECharts | null = null; // lineChart instance
+let chartData = ref({} as Ref<LineDataModel>) // 图表所需数据
 
 const colorList = ["#9E87FF", "#73DDFF", "#fe9a8b", "#F56948", "#9E87FF"];
 
 const option = {
   title: {
-    text: "各端交易额",
+    text: '本日交易额统计',
     left: "center",
   },
   legend: {
@@ -52,7 +59,7 @@ const option = {
   xAxis: [
     {
       type: "category",
-      data: ["北京", "上海", "广州", "深圳", "香港", "澳门", "台湾"],
+      data: [],
       axisLine: {
         lineStyle: {
           color: "rgba(107,107,107,0.37)", //x轴颜色
@@ -128,6 +135,8 @@ const option = {
       symbolSize: 1,
       symbol: "circle",
       smooth: true,
+      zlevel: 1,
+      z: 1,
       yAxisIndex: 0,
       showSymbol: false,
       lineStyle: {
@@ -158,6 +167,8 @@ const option = {
       symbolSize: 1,
       symbol: "circle",
       smooth: true,
+      zlevel: 1,
+      z: 1,
       yAxisIndex: 0,
       showSymbol: false,
       lineStyle: {
@@ -184,9 +195,38 @@ const option = {
   ],
 };
 
+watchEffect(() => {
+  console.log(props.lineData);
+  if (props.lineData.xAxisData) {
+    chartData.value = props.lineData
+  }
+
+  // update
+  lineChartInstance?.setOption({
+    title: {
+      text: chartData.value.desc,
+      left: "center",
+    },
+    xAxis: [
+      {
+        data: chartData.value.xAxisData,
+      }
+    ],
+    series: [
+      {
+        data: chartData.value.yAxisData.salesVolume
+      },
+      {
+        data: chartData.value.yAxisData.NetProfit
+      }
+    ]
+  })
+})
+
+// chart init
 function initChart() {
-  lineChart = echarts.init(lineRef.value as unknown as HTMLElement);
-  lineChart.setOption(option);
+  lineChartInstance = echarts.init(lineRef.value as unknown as HTMLElement);
+  lineChartInstance.setOption(option);
 }
 
 onMounted(() => {
@@ -194,8 +234,8 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  if (lineChart) {
-    lineChart.dispose();
+  if (lineChartInstance) {
+    lineChartInstance.dispose();
   }
 });
 </script>

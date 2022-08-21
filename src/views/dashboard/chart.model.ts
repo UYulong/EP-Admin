@@ -19,6 +19,7 @@ export interface PieDataModel {
 
 // 折线图
 export interface LineDataModel {
+  desc: string
   xAxisData: [string]
   yAxisData: YAxisModel
 }

@@ -14,7 +14,7 @@
 
         <!-- 折线图 -->
         <el-col :span="16">
-          <Line></Line>
+          <Line :line-data="lineData"></Line>
         </el-col>
       </el-row>
     </el-tabs>
@@ -28,7 +28,7 @@ import Line from "./chart/line.vue"; // 折线图组件
 import Pie from "./chart/pie.vue"; // 饼图组件
 
 import { Ref } from "vue";
-import { ChartDataModel, PieDataModel } from '../chart.model';
+import { ChartDataModel, LineDataModel, PieDataModel } from '../chart.model';
 
 // tabs 页签数据
 const tabsList = ref([
@@ -51,13 +51,7 @@ let chartInfo = ref({} as Ref<ChartDataModel>); // 接口返回数据
 let pieData = ref({} as Ref<PieDataModel>);
 
 // 折线图--图表数据
-// let lineData: LineDataModel = ref({
-//   xAxisData: [],
-//   yAxisData: {
-//     NetProfit: [],
-//     salesVolume: []
-//   }
-// })
+let lineData = ref({} as Ref<LineDataModel>)
 
 const getChartInfo = async () => {
   const { data } = await getChartInfoData();
@@ -68,13 +62,18 @@ onMounted(() => {
   getChartInfo(); // 发送ajax请求
 });
 
-watch(chartInfo, (newVal) => {
+watch(() => chartInfo.value, (newVal) => {
+  // console.log(newVal);
+
   pieData.value = newVal[activeName.value].pieData
+  lineData.value = newVal[activeName.value].lineData
 });
 
-watch(activeName, (newVal) => {
+watch(() => activeName.value, (newVal) => {
   pieData.value = chartInfo.value[newVal].pieData
+  lineData.value = chartInfo.value[newVal].lineData
 })
+
 
 
 </script>

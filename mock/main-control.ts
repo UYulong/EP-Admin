@@ -115,6 +115,7 @@ export default [
                 ],
               },
               lineData: {
+                desc: '本日交易额统计',
                 xAxisData: [
                   "WeChat",
                   "BiliBili",
@@ -168,6 +169,7 @@ export default [
               },
 
               lineData: {
+                desc: '本周交易额统计',
                 xAxisData: [
                   "WeChat",
                   "BiliBili",
@@ -220,6 +222,7 @@ export default [
                 ],
               },
               lineData: {
+                desc: '本月交易额统计',
                 xAxisData: [
                   "WeChat",
                   "BiliBili",
@@ -272,6 +275,7 @@ export default [
                 ],
               },
               lineData: {
+                desc: '本年交易额统计',
                 xAxisData: [
                   "WeChat",
                   "BiliBili",
