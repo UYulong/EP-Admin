@@ -13,25 +13,40 @@
     <div class="card_body">
       <div class="body_top">
         <h2>
-          <CountTo :num="list.visits"></CountTo>
+          <CountTo :endVal="list.visits" prefix="$" />
         </h2>
       </div>
       <div class="body_percent">
-        <p>日同比：{{ list.dayPercent }}<span></span></p>
-        <p>周同比：{{ list.weekPercent }}<span></span></p>
+        <p>
+          <span class="percent_text">日同比：</span>
+          <CountTo class="percec_num" :endVal="list.dayPercent" suffix="%" />
+          <span class="percent-icon">
+            <Arrow :trend="list.dayStatus"></Arrow>
+          </span>
+        </p>
+        <p>
+          <span class="percent_text">周同比：</span>
+          <CountTo class="percec_num" :endVal="list.weekPercent" suffix="%" />
+          <span class="percent-icon">
+            <Arrow :trend="list.weekStatus"></Arrow>
+          </span>
+        </p>
       </div>
     </div>
 
     <!-- 数据汇总 -->
     <div class="card_footer">
       <span>总访问量：</span>
-      <span>{{ list.totalVisits }}</span>
+      <span>
+        <CountTo :endVal="list.totalVisits"></CountTo>
+      </span>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup name="Card">
-import CountTo from "comps/count-to/index.vue";
+import Arrow from 'comps/arrow-icon/index';
+import CountTo from "comps/CountTo/index";
 import { StatusMapModel, SummaryListModel } from "models/dashboard";
 
 defineProps<{ list: SummaryListModel }>();
@@ -88,6 +103,17 @@ const calcTabStatus = (status: string): string => {
       display: flex;
       justify-content: space-between;
       padding: 10px 0;
+      font-size: 14px;
+
+      .percent_text {
+        color: #909299;
+        font-size: 14px;
+      }
+
+      .percec_num {
+        font-size: 16px;
+        color: #606266;
+      }
     }
   }
 

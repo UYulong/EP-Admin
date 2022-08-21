@@ -16,8 +16,8 @@
 </template>
 
 <script lang="ts" setup name="MainControl">
-import Card from "comps/card/index.vue"; // 详情汇总面板
 import panelChart from "./panel-chart.vue"; // 数据可视化面板
+import Card from "./trend-card/index.vue"; // 详情趋势汇总面板
 
 import { getSummaryListData } from "apis/mock/dashboard"; // api
 
@@ -33,4 +33,5 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>

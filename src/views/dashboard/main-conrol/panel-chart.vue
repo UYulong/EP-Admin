@@ -28,7 +28,7 @@ import Line from "./chart/line.vue"; // 折线图组件
 import Pie from "./chart/pie.vue"; // 饼图组件
 
 import { Ref } from "vue";
-import { ChartDataModel, LineDataModel, PieDataModel } from '../chart.model';
+import { ChartDataModel, LineDataModel, PieDataModel } from '../model/chart.model';
 
 // tabs 页签数据
 const tabsList = ref([

@@ -8,7 +8,7 @@
 <script lang="ts" setup name="LineChart">
 import * as echarts from "echarts";
 import { Ref } from "vue";
-import { LineDataModel } from '../../chart.model';
+import { LineDataModel } from '../../model/chart.model';
 
 const props = defineProps<{
   lineData: LineDataModel
@@ -196,7 +196,6 @@ const option = {
 };
 
 watchEffect(() => {
-  console.log(props.lineData);
   if (props.lineData.xAxisData) {
     chartData.value = props.lineData
   }

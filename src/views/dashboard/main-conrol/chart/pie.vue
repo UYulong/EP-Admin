@@ -6,7 +6,7 @@
 
 <script lang="ts" setup name="PieChart">
 import * as echarts from "echarts";
-import { PieChartDataModel, PieDataModel } from '../../chart.model';
+import { PieChartDataModel, PieDataModel } from '../../model/chart.model';
 
 const props = defineProps<{
   pieData: PieDataModel;
