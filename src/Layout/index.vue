@@ -2,24 +2,27 @@
   <!-- 布局 -->
   <div class="common-layout">
     <el-container>
-      <el-aside :width="asideWidth" class="aside_wrap">
+      <el-aside
+        :width="asideWidth"
+        class="aside_wrap"
+      >
         <!-- 侧边栏 -->
-        <SideBar></SideBar>
+        <SideBar />
       </el-aside>
       <el-container>
         <el-header class="header_wrap">
           <div class="bar_setting">
             <!-- 面包屑 -->
-            <BarCon></BarCon>
+            <BarCon />
           </div>
           <div class="personal_setting">
             <!-- 个人中心 -->
-            <Info></Info>
+            <Info />
           </div>
         </el-header>
         <el-main>
           <!-- 主区 -->
-          <router-view></router-view>
+          <router-view />
         </el-main>
       </el-container>
     </el-container>

@@ -7,7 +7,7 @@
 
     <!-- 锁屏 -->
     <div class="personal_lock">
-      <Lockscreen></Lockscreen>
+      <Lockscreen />
     </div>
 
     <!-- 全屏展示 -->

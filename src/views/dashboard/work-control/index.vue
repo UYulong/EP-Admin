@@ -2,7 +2,7 @@
   <!-- 工作台 -->
   <div>
     <!-- 顶部信息中心 -->
-    <info-center></info-center>
+    <info-center />
   </div>
 </template>
 

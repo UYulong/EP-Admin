@@ -2,10 +2,13 @@
   <!-- 记住密码 -->
   <div class="remember-me">
     <span>
-      <el-checkbox v-model="isRemember"></el-checkbox>
+      <el-checkbox v-model="isRemember" />
     </span>
-    <span class="label-text" :class="{ active: isRemember }">
-      <slot></slot>
+    <span
+      class="label-text"
+      :class="{ active: isRemember }"
+    >
+      <slot />
     </span>
   </div>
 </template>

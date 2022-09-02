@@ -2,8 +2,12 @@
   <div class="login-page__wrapper">
     <!-- 登录表单 -->
     <div class="login-form">
-      <h3 class="app-title">{{ project_title }}</h3>
-      <p class="app-subtitle">THIS IS A VUE3 BACKGROUND MANAGEMENT TEMPLATE</p>
+      <h3 class="app-title">
+        {{ project_title }}
+      </h3>
+      <p class="app-subtitle">
+        THIS IS A VUE3 BACKGROUND MANAGEMENT TEMPLATE
+      </p>
 
       <!-- 输入框 -->
       <div class="input-box">
@@ -12,35 +16,38 @@
             <el-input
               v-model="userLoginForm.userName"
               placeholder="请输入用户名称"
-            ></el-input>
+            />
           </el-form-item>
           <el-form-item>
             <el-input
               v-model="userLoginForm.userPassword"
               placeholder="请输入用户密码"
               type="password"
-            ></el-input>
+            />
           </el-form-item>
           <el-form-item>
             <el-input
               v-model="userLoginForm.verificationCode"
               class="verification-code-input"
               placeholder="请输入验证码"
-            >
-            </el-input>
+            />
           </el-form-item>
         </el-form>
       </div>
 
       <!-- 密码控制 -->
       <div class="password-control">
-        <Remember :userInfo="userLoginForm">记住密码</Remember>
+        <Remember :user-info="userLoginForm">
+          记住密码
+        </Remember>
         <Retrive>忘记密码?</Retrive>
       </div>
 
       <!-- 登录按钮 -->
       <div class="submit-btn">
-        <p @click="handelSubmitEvent">登录</p>
+        <p @click="handelSubmitEvent">
+          登录
+        </p>
       </div>
     </div>
   </div>

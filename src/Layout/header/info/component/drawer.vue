@@ -5,8 +5,12 @@
       <template #header>
         <h4>title</h4>
       </template>
-      <template #default>default</template>
-      <template #footer> footer </template>
+      <template #default>
+        default
+      </template>
+      <template #footer>
+        footer
+      </template>
     </el-drawer>
   </div>
 </template>

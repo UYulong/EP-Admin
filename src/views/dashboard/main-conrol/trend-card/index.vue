@@ -5,7 +5,9 @@
     <div class="card_title">
       <p>{{ list.title }}</p>
       <p>
-        <el-tag :type="calcTabStatus(list.type)">{{ list.type }}</el-tag>
+        <el-tag :type="calcTabStatus(list.type)">
+          {{ list.type }}
+        </el-tag>
       </p>
     </div>
 
@@ -13,22 +15,33 @@
     <div class="card_body">
       <div class="body_top">
         <h2>
-          <CountTo :endVal="list.visits" prefix="$" />
+          <CountTo
+            :end-val="list.visits"
+            prefix="$"
+          />
         </h2>
       </div>
       <div class="body_percent">
         <p>
           <span class="percent_text">日同比：</span>
-          <CountTo class="percec_num" :endVal="list.dayPercent" suffix="%" />
+          <CountTo
+            class="percec_num"
+            :end-val="list.dayPercent"
+            suffix="%"
+          />
           <span class="percent-icon">
-            <Arrow :trend="list.dayStatus"></Arrow>
+            <Arrow :trend="list.dayStatus" />
           </span>
         </p>
         <p>
           <span class="percent_text">周同比：</span>
-          <CountTo class="percec_num" :endVal="list.weekPercent" suffix="%" />
+          <CountTo
+            class="percec_num"
+            :end-val="list.weekPercent"
+            suffix="%"
+          />
           <span class="percent-icon">
-            <Arrow :trend="list.weekStatus"></Arrow>
+            <Arrow :trend="list.weekStatus" />
           </span>
         </p>
       </div>
@@ -38,7 +51,7 @@
     <div class="card_footer">
       <span>总访问量：</span>
       <span>
-        <CountTo :endVal="list.totalVisits"></CountTo>
+        <CountTo :end-val="list.totalVisits" />
       </span>
     </div>
   </div>

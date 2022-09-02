@@ -3,15 +3,18 @@
   <div>
     <!-- 数据详情汇总面板 -->
     <el-row :gutter="20">
-      <template v-for="item in summaryList" :key="item.id">
+      <template
+        v-for="item in summaryList"
+        :key="item.id"
+      >
         <el-col :span="6">
-          <Card :list="item"></Card>
+          <Card :list="item" />
         </el-col>
       </template>
     </el-row>
 
     <!-- 销售数据可视化面板 -->
-    <panelChart></panelChart>
+    <panelChart />
   </div>
 </template>
 

@@ -1,20 +1,31 @@
 <template>
-  <el-card class="box-card" shadow="never">
-    <el-tabs v-model="activeName" @tab-click="handleTabsClick">
-      <template v-for="item in tabsList" :key="item.name">
-        <el-tab-pane :label="item.label" :name="item.name">
-        </el-tab-pane>
+  <el-card
+    class="box-card"
+    shadow="never"
+  >
+    <el-tabs
+      v-model="activeName"
+      @tab-click="handleTabsClick"
+    >
+      <template
+        v-for="item in tabsList"
+        :key="item.name"
+      >
+        <el-tab-pane
+          :label="item.label"
+          :name="item.name"
+        />
       </template>
 
       <el-row :gutter="5">
         <!-- 饼图 -->
         <el-col :span="8">
-          <Pie :pie-data="pieData"></Pie>
+          <Pie :pie-data="pieData" />
         </el-col>
 
         <!-- 折线图 -->
         <el-col :span="16">
-          <Line :line-data="lineData"></Line>
+          <Line :line-data="lineData" />
         </el-col>
       </el-row>
     </el-tabs>

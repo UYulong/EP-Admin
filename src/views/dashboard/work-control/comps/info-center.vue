@@ -4,12 +4,19 @@
     <div class="info_wrap">
       <div class="left">
         <div class="avatar">
-          <el-avatar :size="74" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+          <el-avatar
+            :size="74"
+            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+          />
         </div>
 
         <div class="greetings">
-          <p class="greetings_text">早安，牛马！开始您的一天的工作吧！</p>
-          <p class="weather">今日天气：晴天☀️，20℃ - 32℃！ </p>
+          <p class="greetings_text">
+            早安，牛马！开始您的一天的工作吧！
+          </p>
+          <p class="weather">
+            今日天气：晴天☀️，20℃ - 32℃！
+          </p>
         </div>
       </div>
 
@@ -19,9 +26,6 @@
         <p><span class="statistics_text">团队</span><span class="statistics_num">431</span></p>
       </div>
     </div>
-
-
-
   </el-card>
 </template>
 

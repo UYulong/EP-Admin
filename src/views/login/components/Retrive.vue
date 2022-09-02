@@ -1,7 +1,10 @@
 <template>
   <!-- 找回密码 -->
-  <p class="retrieve-password" @click="handleRetrieveEvent">
-    <slot></slot>
+  <p
+    class="retrieve-password"
+    @click="handleRetrieveEvent"
+  >
+    <slot />
   </p>
 </template>
 

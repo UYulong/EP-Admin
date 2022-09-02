@@ -6,7 +6,7 @@
   >
     <template #title>
       <el-icon v-if="props.routes?.meta.icon">
-        <component :is="calcIcon(props.routes?.meta.icon)"></component>
+        <component :is="calcIcon(props.routes?.meta.icon)" />
       </el-icon>
 
       <span>{{ props.routes?.meta.title }}</span>
@@ -18,7 +18,7 @@
       :key="route.path"
       :routes="route"
       :base-path="resolvePath(route.path)"
-    ></SidebarItem>
+    />
   </el-sub-menu>
 
   <el-menu-item
@@ -27,7 +27,7 @@
   >
     <!-- 计算icon -->
     <el-icon v-if="props.routes?.meta.icon">
-      <component :is="calcIcon(props.routes?.meta.icon)"></component>
+      <component :is="calcIcon(props.routes?.meta.icon)" />
     </el-icon>
     <span>{{ props.routes?.meta.title }}</span>
   </el-menu-item>
@@ -37,10 +37,14 @@
 const props = defineProps({
   routes: {
     type: Object,
+    default: () => {
+      return {}
+    }
   },
 
   basePath: {
     type: String,
+    default: ''
   },
 });
 

@@ -1,7 +1,10 @@
 <template>
   <!-- 折线图 -->
   <div class="line_chart_wrap">
-    <div ref="lineRef" class="line_chart"></div>
+    <div
+      ref="lineRef"
+      class="line_chart"
+    />
   </div>
 </template>
 

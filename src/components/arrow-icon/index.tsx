@@ -5,7 +5,10 @@ export default defineComponent({
   name: 'ArrowIcon',
 
   props: {
-    trend: String
+    trend: {
+      type: String,
+      default: ''
+    }
   },
 
   setup(props, ctx) {

@@ -3,6 +3,7 @@ export default defineComponent({
   props: {
     src: {
       type: String,
+      default: ''
     },
   },
 

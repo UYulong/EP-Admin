@@ -1,10 +1,10 @@
-import vue from "@vitejs/plugin-vue";
+import vue from '@vitejs/plugin-vue';
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import AutoImport from "unplugin-auto-import/vite"; // 配置自动导入vue钩子
 import { defineConfig } from "vite";
 import { viteMockServe } from "vite-plugin-mock"; // mock
-const resolve = (dir: string) => path.join(__dirname, dir);
+const resolve = (dir: string) => path.join(__dirname, dir)
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -31,4 +31,4 @@ export default defineConfig({
     }),
     viteMockServe(),
   ],
-});
+})

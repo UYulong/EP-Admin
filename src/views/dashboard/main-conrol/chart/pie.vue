@@ -1,6 +1,9 @@
 <template>
   <div class="pie_chart_wrap">
-    <div ref="pieRef" class="pie_chart"></div>
+    <div
+      ref="pieRef"
+      class="pie_chart"
+    />
   </div>
 </template>
 

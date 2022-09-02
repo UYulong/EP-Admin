@@ -17,7 +17,7 @@
         :key="item.path"
         :routes="item"
         :base-path="item.path"
-      ></SidebarItem>
+      />
     </el-menu>
   </div>
 </template>

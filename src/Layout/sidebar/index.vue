@@ -2,10 +2,10 @@
   <!-- 侧边栏 -->
   <div class="sidebar-wrap">
     <!-- logo -->
-    <Logo v-if="project_logo_isShow"></Logo>
+    <Logo v-if="project_logo_isShow" />
 
     <!-- sidebar -->
-    <Menu></Menu>
+    <Menu />
   </div>
 </template>
 
