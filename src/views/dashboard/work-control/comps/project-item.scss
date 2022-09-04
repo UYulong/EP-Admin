@@ -1,0 +1,34 @@
+.project-item__box {
+  padding: 15px;
+  border-radius: 0;
+  border: 1px solid #ebeef5;
+  border-right: none;
+  border-bottom: none;
+
+  &:hover {
+    box-shadow: var(--el-box-shadow-dark);
+  }
+
+  .project-item__avatar {
+    display: flex;
+    align-items: center;
+
+    .project-item__name {
+      margin-left: 18px;
+    }
+  }
+
+  .project-item__slogan {
+    padding: 15px;
+    font-size: 14px;
+    color: #909399;
+  }
+
+  .project-item__time {
+    color: #606266;
+    font-size: 14px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

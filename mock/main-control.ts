@@ -303,4 +303,69 @@ export default [
       };
     },
   },
+
+  {
+    url: '/api/dashboard/workControl/projectList',
+    method: 'get',
+    response: ({headers}) => {
+      const { authorisation } = headers;
+
+      if (authorisation && authorisation === userToken) {
+        return {
+          code: 0,
+          message: "数据获取成功!",
+          data:  [
+            {
+              avatar_url: 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png',
+              name: '产品汪',
+              slogan: '哥们，我改一个需求！',
+              source: '产品组',
+              time: '2042-10-01'
+            },
+            {
+              avatar_url: 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png',
+              name: '运营喵',
+              slogan: '上网冲浪中...',
+              source: '运营组',
+              time: '2042-10-01'
+            },
+            {
+              avatar_url: 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png',
+              name: '程序猿',
+              slogan: '这个需求我做不了！',
+              source: '开发组',
+              time: '2042-10-01'
+            },
+            {
+              avatar_url: 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png',
+              name: '测试',
+              slogan: '兄弟，你这又出bug了！',
+              source: '测试组',
+              time: '2042-10-01'
+            },
+            {
+              avatar_url: 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png',
+              name: 'UI',
+              slogan: '你是美工，你全家都是美工！',
+              source: '开源组',
+              time: '2042-10-01'
+            },
+            {
+              avatar_url: 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png',
+              name: '甲方爸爸',
+              slogan: '还是换成第一版吧！！！',
+              source: 'xxx',
+              time: '2042-10-01'
+            }
+          ],
+        };
+      }
+
+      return {
+        code: 1000,
+        message: "用户token存在问题",
+        data: null,
+      };
+    }
+  }
 ] as MockMethod[];

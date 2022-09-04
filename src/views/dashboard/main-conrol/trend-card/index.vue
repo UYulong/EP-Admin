@@ -101,9 +101,6 @@ const calcTabStatus = (status: string): string => {
   .card_body {
     @include pd-style();
     border-bottom: 1px solid #f2f6fc;
-    // display: flex;
-    // justify-content: space-evenly;
-    // flex-direction: column;
 
     .body_top {
       h2 {

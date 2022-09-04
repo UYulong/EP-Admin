@@ -12,8 +12,6 @@ export default defineComponent({
   },
 
   setup(props, ctx) {
-
-
     const filterIcon = (trend?: string) => {
       if (trend === 'up') {
         return <el-icon class={'up-icon'}><CaretTop /></el-icon>

@@ -3,6 +3,7 @@ import requset from "../../utils/request";
 enum Api {
   GET_SUMMARY_LIST = "/dashboard/mainControl",
   GET_CHART_INFO = "/dashboard/mainControl/chartInfo",
+  GET_PROJECT_LIST = "/dashboard/workControl/projectList",
 }
 
 const getSummaryListData = () => {
@@ -18,4 +19,12 @@ const getChartInfoData = () => {
     method: "get",
   });
 };
-export { getSummaryListData, getChartInfoData };
+
+const getProjectListData = () => {
+  return requset({
+    url: Api.GET_PROJECT_LIST,
+    method: "get",
+  });
+};
+
+export { getSummaryListData, getChartInfoData, getProjectListData };
