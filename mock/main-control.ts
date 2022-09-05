@@ -367,5 +367,58 @@ export default [
         data: null,
       };
     }
+  },
+
+  {
+    url: '/api/dashboard/workControl/newsList',
+    method: 'get',
+    response: ({headers}) => {
+      const { authorisation } = headers;
+
+      if (authorisation && authorisation === userToken) {
+        return {
+          code: 0,
+          message: "数据获取成功!",
+          data: [
+            {
+              avatar_url: 'https://pic.imgdb.cn/item/6315b85b16f2c2beb166616f.png',
+              name: '和尚',
+              desc: `刚刚修改了一个bug，并推送到了 <a>fixbug</a> 分支`,
+              time: '刚刚'
+            },
+            {
+              avatar_url: 'https://pic.imgdb.cn/item/6315b83916f2c2beb1663b3a.png',
+              name: '大彪',
+              desc: `刚刚提交了后端代码到 <a>feature</a> 分支`,
+              time: '10分钟前'
+            },
+            {
+              avatar_url: 'https://pic.imgdb.cn/item/6315b85b16f2c2beb1666236.png',
+              name: '老赵',
+              desc: '开会讨论分解了需求，开始任务排期中...',
+              time: '30分钟前'
+            },
+            {
+              avatar_url: 'https://pic.imgdb.cn/item/6315b85b16f2c2beb1666188.png',
+              name: '老李',
+              desc: '需求太多啦，得加钱！',
+              time: '10分钟前'
+            },
+            {
+              avatar_url: 'https://pic.imgdb.cn/item/6315b85b16f2c2beb166618f.png',
+              name: '旅长',
+              desc: '这108个需求，明天中午12:00上线！',
+              time: '3小时前'
+            }
+          ]
+        };
+      }
+
+      return {
+        code: 1000,
+        message: "用户token存在问题",
+        data: null,
+      };
+    }
   }
 ] as MockMethod[];

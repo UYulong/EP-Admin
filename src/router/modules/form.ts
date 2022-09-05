@@ -3,16 +3,17 @@ import Layout from "layout/index.vue"; // 布局
 // 表单页面
 export default {
   path: "/form",
-  redirect: "/form/basic-form",
+  redirect: "/form/baseForm",
   component: Layout,
   hidden: false,
+  name: '',
   meta: {
     title: "表单页面",
     icon: "Postcard",
   },
   children: [
     {
-      path: "base-form",
+      path: "baseForm",
       name: "BaseForm",
       component: () => import("views/form/base-form/index.vue"),
       meta: {

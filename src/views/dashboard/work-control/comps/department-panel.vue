@@ -1,5 +1,5 @@
 <template>
-  <!-- 项目 -->
+  <!-- 部门简介 -->
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
@@ -30,8 +30,8 @@
 <script lang="ts" setup name='ProjectPanel'>
 import { Ref } from 'vue';
 import { getProjectListData } from '../../../../apis/mock/dashboard';
-import { ProjectListModel } from '../../model/project.model';
-import ProjectItem from './project-item';
+import { ProjectListModel } from '../../model/dashboard';
+import ProjectItem from './department-item';
 
 
 const projectList: Ref<ProjectListModel[]> = ref([])
@@ -51,7 +51,6 @@ onMounted(() => {
 .el-card {
   border: none;
   :deep(.el-card__header) {
-    padding: 15px 20px;
     border-bottom: none;
   }
 

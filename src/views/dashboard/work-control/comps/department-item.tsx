@@ -1,5 +1,5 @@
 import Avatar from "../../../../components/avatar/avatar"; // 头像组件
-import './project-item.scss'; // css
+import './style/department-item.scss'; // css
 
 export default defineComponent({
   name: 'ProjectItem',
