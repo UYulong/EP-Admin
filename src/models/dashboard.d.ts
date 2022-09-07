@@ -2,11 +2,11 @@ export interface SummaryListModel {
   id: number;
   title: string;
   type: string;
-  visits: string;
-  totalVisits: string;
+  visits: number;
+  totalVisits: number;
   dayStatus: string;
-  dayPercent: string;
-  weekPercent: string;
+  dayPercent: number;
+  weekPercent: number;
   weekStatus: string;
 }
 

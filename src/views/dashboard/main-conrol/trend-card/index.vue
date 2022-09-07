@@ -24,7 +24,7 @@
       <div class="body_percent">
         <p>
           <span class="percent_text">日同比：</span>
-          <CountTo
+          <count-to
             :end-val="list.dayPercent"
             class="percec_num"
             suffix="%"
@@ -35,7 +35,7 @@
         </p>
         <p>
           <span class="percent_text">周同比：</span>
-          <CountTo
+          <count-to
             class="percec_num"
             :end-val="list.weekPercent"
             suffix="%"
@@ -51,7 +51,7 @@
     <div class="card_footer">
       <span>总访问量：</span>
       <span>
-        <CountTo :end-val="list.totalVisits" />
+        <count-to :end-val="list.totalVisits" />
       </span>
     </div>
   </div>
