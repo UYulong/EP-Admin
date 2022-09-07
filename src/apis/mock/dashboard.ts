@@ -5,6 +5,7 @@ enum Api {
   GET_CHART_INFO = "/dashboard/mainControl/chartInfo",
   GET_PROJECT_LIST = "/dashboard/workControl/projectList",
   GET_NEWS_LIST = "/dashboard/workControl/newsList",
+  GET_SUMMARY_CHART = "/dashboard/workControl/output",
 }
 
 const getSummaryListData = () => {
@@ -35,4 +36,11 @@ const getNewsListData = () => {
   });
 };
 
-export { getSummaryListData, getChartInfoData, getProjectListData, getNewsListData };
+const getOutputListData = () => {
+  return requset({
+    url: Api.GET_SUMMARY_CHART,
+    method: "get",
+  });
+};
+
+export { getSummaryListData, getChartInfoData, getProjectListData, getNewsListData, getOutputListData };

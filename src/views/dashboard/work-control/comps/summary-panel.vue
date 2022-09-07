@@ -13,11 +13,31 @@
       </div>
     </template>
 
-    <div>1</div>
+    <!-- 图表 -->
+    <PieChart 
+      width="450px" 
+      height="360px"
+      :data="chartData"
+    />
   </el-card>
 </template>
 
 <script lang="ts" setup name='SummaryPanel'>
+import { Ref } from 'vue';
+import { getOutputListData } from '../../../../apis/mock/dashboard'; // api
+import PieChart from '../../../../components/charts/pie.vue'; // 饼图-组件
+import { PieDataModel } from '../../../../models/dashboard';
+
+const chartData: Ref<PieDataModel[]> = ref([])
+
+const getOutputList = async () => {
+  const { data } = await getOutputListData()
+  chartData.value = data
+}
+
+onMounted(() => {
+  getOutputList()
+})
 
 </script>
 

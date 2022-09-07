@@ -13,3 +13,26 @@ export interface SummaryListModel {
 export interface StatusMapModel {
   [key: string]: string;
 }
+
+// 饼图数据
+export interface PieDataModel {
+  value: number
+  name: string
+}
+
+export interface PieChartDataModel {
+  desc: string;
+  data: PieDataModel[];
+}
+
+// 折线图数据
+export interface LineDataModel {
+  desc: string
+  xAxisData: [string]
+  yAxisData: YAxisModel
+}
+
+export interface YAxisModel {
+  NetProfit: [number]
+  salesVolume: [number]
+}

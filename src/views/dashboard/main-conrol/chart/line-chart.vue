@@ -1,29 +1,65 @@
 <template>
   <!-- 折线图 -->
-  <div class="line_chart_wrap">
-    <div
-      ref="lineRef"
-      class="line_chart"
-    />
-  </div>
+  <div
+    ref="chartRef"
+    :style="{width, height}"
+  />
 </template>
 
 <script lang="ts" setup name="LineChart">
 import * as echarts from "echarts";
 import { Ref } from "vue";
-import { LineDataModel } from '../../model/chart.model';
+import { usePieEcharts } from "../../../../hooks/usePieChart";
+import { LineDataModel } from "../../../../models/dashboard";
 
 const props = defineProps<{
   lineData: LineDataModel
+  width: string
+  height: string
 }>()
 
-const lineRef = ref<HTMLDivElement | null>(null); // line chart dom reference
-let lineChartInstance: echarts.ECharts | null = null; // lineChart instance
+const chartRef = ref<HTMLDivElement | null>(null) // 设置 dom 引用
+
 let chartData = ref({} as Ref<LineDataModel>) // 图表所需数据
 
 const colorList = ["#9E87FF", "#73DDFF", "#fe9a8b", "#F56948", "#9E87FF"];
 
-const option = {
+const { setOptions, getInstance } = usePieEcharts(chartRef as Ref<HTMLDivElement>)
+
+
+watch(() => props.lineData, () => {
+  if (props.lineData.xAxisData) {
+    chartData.value = props.lineData
+
+    const { desc, xAxisData, yAxisData } = props.lineData
+
+    const instance = getInstance()
+
+    // update
+    instance?.setOption({
+      title: {
+        text: desc
+      },
+      xAxis: [
+        {
+          data: xAxisData,
+        }
+      ],
+
+      series: [
+        {
+          data: yAxisData.NetProfit
+        },
+        {
+          data: yAxisData.salesVolume
+        }
+      ]
+    })
+  }
+})
+
+// 初始化设置
+setOptions({
   title: {
     text: '本日交易额统计',
     left: "center",
@@ -34,7 +70,6 @@ const option = {
     right: "8%",
     itemWidth: 8,
     itemGap: 20,
-    color: "#556677",
   },
   tooltip: {
     trigger: "axis",
@@ -52,7 +87,6 @@ const option = {
       },
     },
     backgroundColor: "#fff",
-    color: "#5c6c7c",
     padding: [10, 10],
     extraCssText: "box-shadow: 1px 0 2px 0 rgba(163,163,163,0.5)",
   },
@@ -78,33 +112,7 @@ const option = {
       },
       axisPointer: {
         label: {
-          padding: [11, 5, 7],
-          backgroundColor: {
-            type: "linear",
-            x: 0,
-            y: 0,
-            x2: 0,
-            y2: 1,
-            colorStops: [
-              {
-                offset: 0,
-                color: "#fff", // 0% 处的颜色
-              },
-              {
-                offset: 0.9,
-                color: "#fff", // 0% 处的颜色
-              },
-              {
-                offset: 0.9,
-                color: "#33c0cd", // 0% 处的颜色
-              },
-              {
-                offset: 1,
-                color: "#33c0cd", // 100% 处的颜色
-              },
-            ],
-            global: false, // 缺省为 false
-          },
+          padding: [11, 5, 7]
         },
       },
       boundaryGap: false,
@@ -196,50 +204,7 @@ const option = {
       },
     },
   ],
-};
-
-watchEffect(() => {
-  if (props.lineData.xAxisData) {
-    chartData.value = props.lineData
-  }
-
-  // update
-  lineChartInstance?.setOption({
-    title: {
-      text: chartData.value.desc,
-      left: "center",
-    },
-    xAxis: [
-      {
-        data: chartData.value.xAxisData,
-      }
-    ],
-    series: [
-      {
-        data: chartData.value.yAxisData.salesVolume
-      },
-      {
-        data: chartData.value.yAxisData.NetProfit
-      }
-    ]
-  })
 })
-
-// chart init
-function initChart() {
-  lineChartInstance = echarts.init(lineRef.value as unknown as HTMLElement);
-  lineChartInstance.setOption(option);
-}
-
-onMounted(() => {
-  initChart();
-});
-
-onBeforeUnmount(() => {
-  if (lineChartInstance) {
-    lineChartInstance.dispose();
-  }
-});
 </script>
 
 <style lang="scss" scoped>

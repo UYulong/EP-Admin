@@ -12,7 +12,7 @@
 
         <div class="greetings">
           <p class="greetings_text">
-            早安，牛马！开始您的一天的工作吧！
+            早安，牛马！开始您一天的工作吧！
           </p>
           <p class="weather">
             今日天气：晴天☀️，20℃ - 32℃！

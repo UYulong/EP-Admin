@@ -1,64 +1,32 @@
 <template>
-  <div class="pie_chart_wrap">
-    <div
-      ref="pieRef"
-      class="pie_chart"
-    />
-  </div>
+  <div
+    ref="chartRef"
+    :style="{width, height}"
+  />
 </template>
 
-<script lang="ts" setup name="PieChart">
-import * as echarts from "echarts";
-export interface PieChartDataModel {
-  value: number;
-  name: string;
+<script lang="ts" setup name='CommonPieChart'>
+import { Ref } from 'vue';
+import { usePieEcharts } from '../../hooks/usePieChart';
+import { PieDataModel } from '../../models/dashboard';
+
+interface EChartsDomModel {
+  width: string,
+  height: string,
+  data: Array<PieDataModel>
 }
 
-export interface PieDataModel {
-  desc: string;
-  data: PieChartDataModel[];
-}
+const chartRef = ref<HTMLDivElement | null>(null) // 设置 dom 引用
 
-const props = defineProps<{
-  pieData: PieDataModel;
-}>();
+const { setOptions } = usePieEcharts(chartRef as Ref<HTMLDivElement>)
 
-// pie chart render datas
-const pieRef = ref<HTMLDivElement | null>(null); // pie chart dom reference
-let visitsNum = ref([] as Array<PieChartDataModel>); // 图表所需数据
-let chartTitle = ref("本日活跃用户数量") // chart title
-let pieChartInstance: echarts.ECharts | null = null; // chart instance
+// props - 接收dom宽度和高度
+const props = defineProps<EChartsDomModel>()
 
-watchEffect(() => {
-  if (props.pieData.data && props.pieData.data.length !== 0) {
-
-    visitsNum.value = props.pieData.data; //设置数据
-    chartTitle.value = props.pieData.desc //设置标题
-
-    // update
-    if (pieChartInstance) {
-      pieChartInstance.setOption({
-        title: {
-          text: chartTitle.value,
-        },
-        series: [
-          {
-            name: props.pieData.desc,
-            data: visitsNum.value,
-          },
-        ],
-      });
-    }
-  }
-});
-
-// chart init 
-function initChart() {
-  pieChartInstance = echarts.init(pieRef.value as unknown as HTMLElement);
-  const option = {
+onMounted(() => {
+  setOptions({
     title: {
-      text: chartTitle.value,
-      x: "center",
+      text: '',
     },
     color: [
       "#37a2da",
@@ -81,29 +49,27 @@ function initChart() {
         type: "pie",
         radius: [40, 150],
         roseType: "area",
-        data: visitsNum.value,
+        data: [],
       },
     ],
-  };
-  pieChartInstance.setOption(option);
-}
+  })
+})
 
-onMounted(() => {
-  initChart();
-});
-
-onBeforeUnmount(() => {
-  if (pieChartInstance) {
-    pieChartInstance.dispose()
-  }
+watch(() => props.data, () => {
+  setOptions({
+    tooltip: {
+      trigger: "item",
+      formatter: "{a} <br/>{b} : {c} ({d}%)",
+    },
+    series: [
+      {
+        name: "产出值",
+        type: "pie",
+        radius: [40, 150],
+        roseType: "area",
+        data: props.data,
+      },
+    ],
+  }, true)
 })
 </script>
-
-<style lang="scss" scoped>
-.pie_chart_wrap {
-  .pie_chart {
-    width: 500px;
-    height: 430px;
-  }
-}
-</style>

@@ -20,12 +20,20 @@
       <el-row :gutter="5">
         <!-- 饼图 -->
         <el-col :span="8">
-          <Pie :pie-data="pieData" />
+          <pie-chart
+            :pie-data="pieData"
+            width="500px"
+            height="430px"
+          />
         </el-col>
 
         <!-- 折线图 -->
         <el-col :span="16">
-          <Line :line-data="lineData" />
+          <LineChart
+            :line-data="lineData"
+            width="1050px"
+            height="430px"
+          />
         </el-col>
       </el-row>
     </el-tabs>
@@ -33,13 +41,14 @@
 </template>
 
 <script lang="ts" setup name="PanelChart">
-import { getChartInfoData } from "apis/mock/dashboard"; // api
 import type { TabsPaneContext } from "element-plus";
-import Line from "./chart/line.vue"; // 折线图组件
-import Pie from "./chart/pie.vue"; // 饼图组件
+import { getChartInfoData } from "../../../apis/mock/dashboard"; // api
+import LineChart from "./chart/line-chart.vue"; // 折线图组件
+import PieChart from "./chart/pie-chart.vue"; // 饼图组件
 
 import { Ref } from "vue";
-import { ChartDataModel, LineDataModel, PieDataModel } from '../model/chart.model';
+import { PieChartDataModel } from "../../../models/dashboard";
+import { ChartDataModel, LineDataModel } from '../model/chart.model';
 
 // tabs 页签数据
 const tabsList = ref([
@@ -59,23 +68,21 @@ const handleTabsClick = (tab: TabsPaneContext, event: Event) => {
 let chartInfo = ref({} as Ref<ChartDataModel>); // 接口返回数据
 
 // 饼图--图表数据
-let pieData = ref({} as Ref<PieDataModel>);
+let pieData = ref({} as Ref<PieChartDataModel>);
 
 // 折线图--图表数据
 let lineData = ref({} as Ref<LineDataModel>)
 
+// 获取接口数据
 const getChartInfo = async () => {
   const { data } = await getChartInfoData();
   chartInfo.value = data;
 };
-
 onMounted(() => {
   getChartInfo(); // 发送ajax请求
 });
 
 watch(() => chartInfo.value, (newVal) => {
-  // console.log(newVal);
-
   pieData.value = newVal[activeName.value].pieData
   lineData.value = newVal[activeName.value].lineData
 });
@@ -84,9 +91,6 @@ watch(() => activeName.value, (newVal) => {
   pieData.value = chartInfo.value[newVal].pieData
   lineData.value = chartInfo.value[newVal].lineData
 })
-
-
-
 </script>
 
 <style lang="scss" scoped>

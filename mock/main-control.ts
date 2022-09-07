@@ -420,5 +420,48 @@ export default [
         data: null,
       };
     }
+  },
+
+  {
+    url: '/api/dashboard/workControl/output',
+    method: 'get',
+    response: ({headers}) => {
+      const { authorisation } = headers;
+
+      if (authorisation && authorisation === userToken) {
+        return {
+          code: 0,
+          message: "数据获取成功!",
+          data: [
+            {
+              value: 10,
+              name: "前端",
+            },
+            {
+              value: 5,
+              name: "后端",
+            },
+            {
+              value: 15,
+              name: "测试",
+            },
+            {
+              value: 25,
+              name: "UI",
+            },
+            {
+              value: 20,
+              name: "产品",
+             },
+          ],
+        };
+      }
+
+      return {
+        code: 1000,
+        message: "用户token存在问题",
+        data: null,
+      };
+    }
   }
 ] as MockMethod[];
