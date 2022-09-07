@@ -16,7 +16,7 @@
     <div>
       <el-row>
         <el-col
-          v-for="item in projectList" 
+          v-for="item in departmentList" 
           :key="item.name"
           :span="8"
         >
@@ -29,20 +29,19 @@
 
 <script lang="ts" setup name='ProjectPanel'>
 import { Ref } from 'vue';
-import { getProjectListData } from '../../../../apis/mock/dashboard';
-import { ProjectListModel } from '../../model/dashboard';
+import { getDepartmentListData } from '../../../../apis/mock/dashboard';
+import { DepartmentListModel } from '../../../../models/dashboard';
 import ProjectItem from './department-item';
 
+const departmentList: Ref<DepartmentListModel[]> = ref([])
 
-const projectList: Ref<ProjectListModel[]> = ref([])
-
-const getProjectList = async () => {
-  const {data} = await getProjectListData()
-  projectList.value = data
+const getDepartmentList = async () => {
+  const {data} = await getDepartmentListData()
+  departmentList.value = data
 }
 
 onMounted(() => {
-  getProjectList()
+  getDepartmentList()
 })
 
 </script>

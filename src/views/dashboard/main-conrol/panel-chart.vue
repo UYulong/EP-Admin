@@ -47,8 +47,7 @@ import LineChart from "./chart/line-chart.vue"; // 折线图组件
 import PieChart from "./chart/pie-chart.vue"; // 饼图组件
 
 import { Ref } from "vue";
-import { PieChartDataModel } from "../../../models/dashboard";
-import { ChartDataModel, LineDataModel } from '../model/chart.model';
+import { ChartDataModel, LineDataModel, PieChartDataModel } from "../../../models/dashboard";
 
 // tabs 页签数据
 const tabsList = ref([

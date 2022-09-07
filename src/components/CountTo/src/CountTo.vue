@@ -5,12 +5,11 @@
 </template>
 <script lang="ts">
 import { TransitionPresets, useTransition } from '@vueuse/core';
-import { isNumber } from 'utils/is';
-import { computed, defineComponent, onMounted, ref, unref, watch, watchEffect } from 'vue';
+import { isNumber } from '../../../utils/is'; // 导入判断是否是数字的帮助方法
 
 const props = {
   startVal: { type: Number, default: 0 },
-  endVal: { type: Number, default: 2021 },
+  endVal: { type: Number, default: 2022 },
   duration: { type: Number, default: 1500 },
   autoplay: { type: Boolean, default: true },
   decimals: {

@@ -15,7 +15,7 @@
     <div class="card_body">
       <div class="body_top">
         <h2>
-          <CountTo
+          <count-to
             :end-val="list.visits"
             prefix="$"
           />
@@ -25,8 +25,8 @@
         <p>
           <span class="percent_text">日同比：</span>
           <CountTo
-            class="percec_num"
             :end-val="list.dayPercent"
+            class="percec_num"
             suffix="%"
           />
           <span class="percent-icon">
@@ -57,12 +57,13 @@
   </div>
 </template>
 
-<script lang="ts" setup name="Card">
-import Arrow from 'comps/arrow-icon/index';
-import CountTo from "comps/CountTo/index";
-import { StatusMapModel, SummaryListModel } from "models/dashboard";
+<script lang="ts" setup name="TrendCard">
+import Arrow from '../../../../components/arrow-icon/index';
+import CountTo from "../../../../components/CountTo/index";
+import { StatusMapModel, SummaryListModel } from '../../../../models/dashboard';
 
-defineProps<{ list: SummaryListModel }>();
+const props = defineProps<{ list: SummaryListModel }>();
+console.log(props.list.visits);
 
 const calcTabStatus = (status: string): string => {
   const statusMap: StatusMapModel = {

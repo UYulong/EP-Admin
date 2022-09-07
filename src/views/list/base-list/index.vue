@@ -1,8 +1,6 @@
 <template>
   <!-- list page -->
-  <div class="list-page">
-    
-  </div>
+  <div class="list-page" />
 </template>
 
 <script lang="ts" setup></script>

@@ -31,7 +31,7 @@
 <script lang="ts" setup name='LatestNews'>
 import { Ref } from 'vue';
 import { getNewsListData } from '../../../../apis/mock/dashboard'; // API
-import { NewsListModel } from '../../model/dashboard';
+import { NewsListModel } from '../../../../models/dashboard';
 import NewsList from './news-list'; // 动态列表-组件
 
 const newsListData: Ref<NewsListModel[]> = ref([])

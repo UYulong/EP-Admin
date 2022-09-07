@@ -22,7 +22,7 @@ const getChartInfoData = () => {
   });
 };
 
-const getProjectListData = () => {
+const getDepartmentListData = () => {
   return requset({
     url: Api.GET_PROJECT_LIST,
     method: "get",
@@ -43,4 +43,4 @@ const getOutputListData = () => {
   });
 };
 
-export { getSummaryListData, getChartInfoData, getProjectListData, getNewsListData, getOutputListData };
+export { getSummaryListData, getChartInfoData, getDepartmentListData, getNewsListData, getOutputListData };

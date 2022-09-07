@@ -27,7 +27,7 @@
 
 <script lang="ts" setup name='NavPanel'>
 import { Ref } from 'vue';
-import { NavModel } from '../../model/dashboard';
+import { NavModel } from '../../../../models/dashboard';
 import NavList from './nav-list.vue';
 
 const navsListData: Ref<NavModel[]> = ref([

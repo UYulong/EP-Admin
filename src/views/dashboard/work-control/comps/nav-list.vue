@@ -20,7 +20,8 @@
 
 <script lang="ts" setup name='NavList'>
 import { useRouter } from 'vue-router';
-import { NavModel, routeObjModel } from '../../model/dashboard';
+import { NavModel, routeObjModel } from '../../../../models/dashboard';
+
 defineProps<{
   info: NavModel
 }>()
