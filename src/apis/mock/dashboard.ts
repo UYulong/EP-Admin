@@ -43,4 +43,11 @@ const getOutputListData = () => {
   });
 };
 
-export { getSummaryListData, getChartInfoData, getDepartmentListData, getNewsListData, getOutputListData };
+export {
+  getSummaryListData,
+  getChartInfoData,
+  getDepartmentListData,
+  getNewsListData,
+  getOutputListData
+};
+

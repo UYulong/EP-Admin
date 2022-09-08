@@ -63,7 +63,6 @@ import CountTo from "../../../../components/CountTo/index";
 import { StatusMapModel, SummaryListModel } from '../../../../models/dashboard';
 
 const props = defineProps<{ list: SummaryListModel }>();
-console.log(props.list.visits);
 
 const calcTabStatus = (status: string): string => {
   const statusMap: StatusMapModel = {
