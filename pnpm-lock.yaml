@@ -10,6 +10,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.0.0
   '@vitejs/plugin-vue-jsx': ^2.0.0
   '@vueuse/core': ^9.0.2
+  animate.css: ^4.1.1
   axios: ^0.27.2
   commitizen: ^4.2.5
   echarts: ^5.3.3
@@ -37,6 +38,7 @@ specifiers:
 dependencies:
   '@element-plus/icons-vue': 2.0.9_vue@3.2.38
   '@vueuse/core': 9.1.1_vue@3.2.38
+  animate.css: 4.1.1
   axios: 0.27.2
   commitizen: 4.2.5
   echarts: 5.3.3
@@ -1028,6 +1030,10 @@ packages:
       uri-js: 4.4.1
     dev: false
     optional: true
+
+  /animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-escapes/4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}

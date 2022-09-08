@@ -22,7 +22,12 @@
         </el-header>
         <el-main>
           <!-- 主区 -->
-          <router-view />
+          <router-view v-slot="{ Component }">
+            <transition :enter-active-class="`animate__animated animate__fadeIn`">
+              <component :is="Component" />
+            </transition>
+          </router-view>
+          <!-- <router-view /> -->
         </el-main>
       </el-container>
     </el-container>

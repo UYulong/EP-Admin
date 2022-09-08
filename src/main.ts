@@ -13,7 +13,7 @@ import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 
 // 导入全局样式
-import "./styles/reset.scss";
+import './styles/index.scss';
 
 // 权限处理
 import "./utils/permission";
