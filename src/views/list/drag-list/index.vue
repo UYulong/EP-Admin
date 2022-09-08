@@ -14,7 +14,9 @@
           <DragUpAndDown v-model="sourceList" />
 
           <el-divider>
-            <el-icon class="drag-list__divider"><star-filled /></el-icon>
+            <el-icon class="drag-list__divider">
+              <star-filled />
+            </el-icon>
           </el-divider>
 
           <!-- 数据格式 -->
