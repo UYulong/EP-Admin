@@ -8,6 +8,12 @@
         height="900"
         max-height="900"
       >
+        <el-table-column
+          label="序号"
+          type="index"
+          width="100"
+          align="center"
+        />
         <el-table-column 
           prop="name"
           label="姓名"
