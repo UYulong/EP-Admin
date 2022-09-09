@@ -1,29 +1,37 @@
 <template>
   <!-- 拖拽列表 -->
   <div class="ep-container drag-list">
-    <el-row :gutter="20">
+    <el-row :gutter="10">
       <el-col :span="12">
         <el-card>
           <template #header>
             <div class="card-header">
-              <span>上下拖动</span>
+              <span class="card-header__text">上下拖动</span>
+              <el-button 
+                type="primary"
+                link
+                @click="handleRestoreEvent('upAndDown')"
+              >
+                还原
+              </el-button>
             </div>
           </template>
 
           <!-- 拖动区域 -->
-          <DragUpAndDown v-model="sourceList" />
+          <DragUpAndDown v-model="poemsSnowSourceList" />
 
+          <!-- 分界线 -->
           <el-divider>
             <el-icon class="drag-list__divider">
               <star-filled />
             </el-icon>
           </el-divider>
 
-          <!-- 数据格式 -->
+          <!-- 反显数据格式 -->
           <div class="drag-list__source-data">
             <ul>
               <li 
-                v-for="(item, index) in sourceList" 
+                v-for="(item, index) in poemsSnowSourceList" 
                 :key="item.id"
               >
                 <span class="drag-list__list-index">{{ index + 1 }}  |</span> 
@@ -36,53 +44,94 @@
 
       <!-- 左右拖动 -->
       <el-col :span="12">
-        左右拖动
+        <el-card>
+          <template #header>
+            <div class="card-header">
+              <span class="card-header__text">左右拖动</span>
+              <el-button 
+                type="primary"
+                link
+                @click="handleRestoreEvent('leftAndRight')"
+              >
+                还原
+              </el-button>
+            </div>
+          </template>
+
+          <!-- 拖动区域 -->
+          <DragLeftAndRight 
+            v-model:left="poemsLeftSourceData" 
+            v-model:right="poemsRightSourceData" 
+          />
+          
+          <!-- 分界线 -->
+          <el-divider>
+            <el-icon class="drag-list__divider">
+              <star-filled />
+            </el-icon>
+          </el-divider>
+
+          <!-- 反显数据格式 -->
+          <el-row :gutter="10">
+            <el-col :span="12">
+              <div class="drag-list__source-data">
+                <ul>
+                  <li 
+                    v-for="(item, index) in poemsLeftSourceData" 
+                    :key="item.id"
+                  >
+                    <span class="drag-list__list-index">{{ index + 1 }}  |</span> 
+                    <span>{{ item }}</span>
+                  </li>
+                </ul>
+              </div>
+            </el-col>
+
+            <el-col :span="12">
+              <div class="drag-list__source-data">
+                <ul>
+                  <li 
+                    v-for="(item, index) in poemsRightSourceData" 
+                    :key="item.id"
+                  >
+                    <span class="drag-list__list-index">{{ index + 1 }}  |</span> 
+                    <span>{{ item }}</span>
+                  </li>
+                </ul>
+              </div>
+            </el-col>
+          </el-row>
+        </el-card>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script lang="ts" setup name='DragList'>
-import DragUpAndDown from './comps/up-down.vue';
+import DragLeftAndRight from './comps/left-right.vue'; // 左右拖拽-组件
+import DragUpAndDown from './comps/up-down.vue'; // 上下拖动-组件
+import { useDragList } from './use-drag-list';
 
-const sourceList = ref([
-  {
-    id: 0,
-    name: '独立寒秋，湘江北去，橘子洲头。'
-  },
-  {
-    id: 1,
-    name: '看万山红遍，层林尽染；漫江碧透，百舸争流。'
-  },
-  {
-    id: 2,
-    name: '鹰击长空，鱼翔浅底，万类霜天竞自由。'
-  },
-  {
-    id: 3,
-    name: '怅寥廓，问苍茫大地，谁主沉浮？'
-  },
-  {
-    id: 4,
-    name: '携来百侣曾游，忆往昔峥嵘岁月稠。'
-  },
-  {
-    id: 5,
-    name: '恰同学少年，风华正茂；书生意气，挥斥方遒。'
-  },
-  {
-    id: 6,
-    name: '指点江山，激扬文字，粪土当年万户侯。'
-  },
-  {
-    id: 7,
-    name: '曾记否，到中流击水，浪遏飞舟？'
-  },
-])
+const {
+  poemsSnowSourceList,
+  poemsLeftSourceData,
+  poemsRightSourceData,
+  handleRestoreEvent
+} = useDragList()
+
 </script>
 
 <style lang="scss" scoped>
 .drag-list {
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card-header__text {
+      font-weight: 600;
+    }
+  }
 
   .drag-list__divider {
     color: #ff4d4f;
