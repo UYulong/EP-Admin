@@ -6,7 +6,19 @@ const regExpIdCard = /(^\d{8}(0\d|10|11|12)([0-2]\d|30|31)\d{3}$)|(^\d{6}(18|19|
 // 中文姓名：2-16位
 const regExpName = /^(?:[\u4e00-\u9fa5·]{2,6})$/
 
+// 银行账户
+const regExpBankAccount = /^[1-9]\d{9,29}$/
+
+// 邮箱
+const regExpEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+// 金额-不支持负数和千分位分隔符
+const regExpAmount = /(?:^[1-9]([0-9]+)?(?:\.[0-9]{1,3})?$)|(?:^(?:0)$)|(?:^[0-9]\.[0-9](?:[0-9])?$)/
+
 export {
   regExpIdCard,
-  regExpName
+  regExpName,
+  regExpBankAccount,
+  regExpEmail,
+  regExpAmount
 }

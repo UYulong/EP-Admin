@@ -20,5 +20,11 @@ export default {
       component: () => import("@/views/list/drag-list/index.vue"),
       meta: { title: "拖拽列表" },
     },
+    {
+      path: "descriptions-list",
+      name: "Descriptions-List",
+      component: () => import("@/views/list/descriptions-list/index.vue"),
+      meta: { title: "其他列表" },
+    },
   ],
 };
