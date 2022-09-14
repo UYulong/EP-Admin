@@ -11,7 +11,7 @@ export default {
     {
       path: "401",
       name: "page401",
-      component: () => import("views/abnormal/401.vue"),
+      component: () => import("views/pages/abnormal/401.vue"),
       meta: {
         title: "401页面",
       },
@@ -19,7 +19,7 @@ export default {
     {
       path: "403",
       name: "page403",
-      component: () => import("views/abnormal/404.vue"),
+      component: () => import("views/pages/abnormal/404.vue"),
       meta: {
         title: "404页面",
       },
@@ -27,7 +27,7 @@ export default {
     {
       path: "500",
       name: "page500",
-      component: () => import("views/abnormal/500.vue"),
+      component: () => import("views/pages/abnormal/500.vue"),
       meta: {
         title: "500页面",
       },

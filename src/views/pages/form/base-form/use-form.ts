@@ -1,8 +1,8 @@
 import type { FormInstance, FormRules } from 'element-plus';
 import { Ref } from 'vue';
-import { DepartmentDataModel, PostsDataModel } from '../../../models/form';
-import useSetForm from '../../../store/modules/form';
-import { regExpIdCard, regExpName } from '../../../utils/libs/regExp';
+import { DepartmentDataModel, PostsDataModel } from '../../../../models/form';
+import useSetForm from '../../../../store/modules/form';
+import { regExpIdCard, regExpName } from '../../../../utils/libs/regExp';
 
 
 const departments: Array<DepartmentDataModel> = [

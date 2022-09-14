@@ -57,8 +57,8 @@
 
 <script lang="ts" setup name="BaseList">
 import { Ref } from 'vue';
-import { getBaseListData } from '../../../apis/mock/list';
-import { BaseListDataModel } from '../../../models/list';
+import { getBaseListData } from '../../../../apis/mock/list';
+import { BaseListDataModel } from '../../../../models/list';
 
 const tableData: Ref<BaseListDataModel[]> = ref([])
 

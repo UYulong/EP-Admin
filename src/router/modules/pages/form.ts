@@ -11,7 +11,7 @@ export default {
     {
       path: "baseForm",
       name: "BaseForm",
-      component: () => import("views/form/base-form/index.vue"),
+      component: () => import("views/pages/form/base-form/index.vue"),
       meta: {
         title: "基础表单",
       },
@@ -19,7 +19,7 @@ export default {
     {
       path: "step-form",
       name: "StepForm",
-      component: () => import("views/form/step-form/index.vue"),
+      component: () => import("views/pages/form/step-form/index.vue"),
       meta: {
         title: "分步表单",
       },

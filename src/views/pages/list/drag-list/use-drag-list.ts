@@ -1,6 +1,6 @@
 import { Ref } from 'vue';
-import { getDragListData } from '../../../apis/mock/list';
-import { DragListDataModel } from '../../../models/list';
+import { getDragListData } from '../../../../apis/mock/list';
+import { DragListDataModel } from '../../../../models/list';
 
 
 export const useDragList = () => {
