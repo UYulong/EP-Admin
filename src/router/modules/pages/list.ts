@@ -1,15 +1,12 @@
-import Layout from "layout/index.vue"; // layout
 
-// 列表页面
+// 列表页面 - 展示
 export default {
-  path: "/list",
-  component: Layout,
-  redirect: "/list/basic-list",
-  meta: { title: "列表页面", icon: "Operation" },
-  hidden: false,
+  path: "lists",
+  name: "Pages-List",
+  meta: { title: "列表页面" },
   children: [
     {
-      path: "basic-list",
+      path: 'basic-list',
       name: "Basic-List",
       component: () => import("@/views/list/base-list/index.vue"),
       meta: { title: "基础列表" },
@@ -26,5 +23,5 @@ export default {
       component: () => import("@/views/list/descriptions-list/index.vue"),
       meta: { title: "其他列表" },
     },
-  ],
+  ]
 };

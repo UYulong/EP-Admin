@@ -11,12 +11,10 @@ declare module "vue-router" {
 import Layout from "layout/index.vue";
 
 // 导入 模块路由
-import Abnormal from "./modules/abnormal"; // 异常页面
 import About from "./modules/about"; // 关于页面
 import Comps from "./modules/comps"; // 自定义组件展示页面
 import Docs from "./modules/docs"; // 文档页面
-import FormRoutes from "./modules/form"; // 表单页面
-import List from "./modules/list"; // 列表页面
+import Pages from "./modules/pages"; // 页面
 
 // 静态路由
 export const constantRoutes: Array<RouteRecordRaw> = [
@@ -48,13 +46,10 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       },
     ],
   },
-
-  List,
-  FormRoutes,
-  Abnormal,
+  Pages,
+  Comps,
   About,
   Docs,
-  Comps,
 ];
 
 // 异步路由

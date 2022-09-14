@@ -1,14 +1,11 @@
-import Layout from "layout/index.vue"; // 布局
 
 // 异常页面 - 展示
 export default {
-  path: "/abnormal",
-  redirect: "/abnormal/401",
-  component: Layout,
+  path: "abnormal",
   hidden: false,
+  name: 'Abnormal',
   meta: {
-    title: "异常页面",
-    icon: "Warning",
+    title: "异常页面"
   },
   children: [
     {

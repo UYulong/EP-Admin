@@ -1,15 +1,11 @@
-import Layout from "layout/index.vue"; // 布局
 
-// 表单页面
+// 表单页面 - 展示
 export default {
-  path: "/form",
-  redirect: "/form/baseForm",
-  component: Layout,
+  path: "forms",
   hidden: false,
-  name: '',
+  name: 'Form',
   meta: {
-    title: "表单页面",
-    icon: "Postcard",
+    title: "表单页面"
   },
   children: [
     {
@@ -26,14 +22,6 @@ export default {
       component: () => import("views/form/step-form/index.vue"),
       meta: {
         title: "分步表单",
-      },
-    },
-    {
-      path: "form-detail",
-      name: "FormDetail",
-      component: () => import("views/form/form-detail/index.vue"),
-      meta: {
-        title: "表单详情",
       },
     },
   ],
