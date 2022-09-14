@@ -75,6 +75,8 @@
   </el-card>
 </template>
 
+<script lang="ts" setup name='DescriptionsList'></script>
+
 <style lang="scss" scoped>
 .card-header {
   display: flex;

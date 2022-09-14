@@ -28,9 +28,9 @@
 </template>
 
 <script lang="ts" setup name='ProjectPanel'>
+import { getDepartmentListData } from 'apis/mock/dashboard';
+import { DepartmentListModel } from 'models/dashboard';
 import { Ref } from 'vue';
-import { getDepartmentListData } from '../../../../apis/mock/dashboard';
-import { DepartmentListModel } from '../../../../models/dashboard';
 import ProjectItem from './department-item';
 
 const departmentList: Ref<DepartmentListModel[]> = ref([])

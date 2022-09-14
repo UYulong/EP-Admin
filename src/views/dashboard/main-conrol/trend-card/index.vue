@@ -58,11 +58,11 @@
 </template>
 
 <script lang="ts" setup name="TrendCard">
-import Arrow from '../../../../components/arrow-icon/index';
-import CountTo from "../../../../components/CountTo/index";
-import { StatusMapModel, SummaryListModel } from '../../../../models/dashboard';
+import Arrow from 'comps/arrow-icon/index';
+import CountTo from "comps/CountTo/index";
+import { StatusMapModel, SummaryListModel } from 'models/dashboard';
 
-const props = defineProps<{ list: SummaryListModel }>();
+defineProps<{ list: SummaryListModel }>();
 
 const calcTabStatus = (status: string): string => {
   const statusMap: StatusMapModel = {

@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 import { TransitionPresets, useTransition } from '@vueuse/core';
-import { isNumber } from '../../../utils/is'; // 导入判断是否是数字的帮助方法
+import { isNumber } from 'utils/is'; // 导入判断是否是数字的帮助方法
 
 const props = {
   startVal: { type: Number, default: 0 },

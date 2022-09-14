@@ -29,8 +29,7 @@
   </el-card>
 </template>
 
-<script lang="ts" setup name=''>
-
+<script lang="ts" setup name='GreetPanel'>
 </script>
 
 <style lang="scss" scoped>

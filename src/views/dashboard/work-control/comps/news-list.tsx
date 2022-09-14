@@ -1,5 +1,5 @@
 // 动态列表
-import Avatar from "../../../../components/avatar/avatar";
+import Avatar from "comps/avatar/avatar";
 import './style/news-list.scss';
 
 export default defineComponent({

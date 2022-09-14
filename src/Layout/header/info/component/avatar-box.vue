@@ -16,7 +16,5 @@
 </template>
 
 <script lang="ts" setup name="AvatarBox">
-import Avatar from "../../../../components/avatar/avatar";
+import Avatar from "comps/avatar/avatar";
 </script>
-
-<style lang="scss" scoped></style>

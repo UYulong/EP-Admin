@@ -1,13 +1,13 @@
 // 对项目路由权限做处理
 
-import { router } from "../router";
+import { router } from "routes/index";
 // import { Message } from 'element-ui'
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
-import useLoginStore from "../store/modules/login"; // loginStore
-import getPageTitle from "../utils/get-page-title"; // set page title
-import { whiteList } from "../utils/settings"; // 路由白名单
-import { getToken } from "../utils/storage"; // get token from localstorage
+import useLoginStore from "store/modules/login"; // loginStore
+import getPageTitle from "utils/get-page-title"; // set page title
+import { whiteList } from "utils/settings"; // 路由白名单
+import { getToken } from "utils/storage"; // get token from localstorage
 
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 

@@ -1,12 +1,12 @@
+import { getUserRoles, login } from "apis/mock/login"; // 登录api
 import { defineStore } from "pinia"; // 登录相关 store
-import { getUserRoles, login } from "../../apis/mock/login"; // 登录api
-import { asyncRoutes } from "../../router"; // 导入 静态路由 和 动态路由
-import { clearToken, getToken, setToken } from "../../utils/storage"; // 设置token方法
+import { asyncRoutes } from "routes/index"; // 导入 静态路由 和 动态路由
+import { clearToken, getToken, setToken } from "utils/storage"; // 设置token方法
 import {
   loginStateModel,
   userInfoModel,
   userLoginFormModel,
-  userRoles,
+  userRoles
 } from "../models/login.model";
 
 const useLoginStore = defineStore({

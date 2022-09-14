@@ -1,7 +1,7 @@
 import { Fn } from '@vueuse/core';
 import type { EChartsOption } from 'echarts';
+import echarts from 'utils/echarts';
 import { Ref } from "vue";
-import echarts from '../utils/echarts';
 
 export function usePieEcharts(elRef: Ref<HTMLDivElement>) {
   // 所需变量声明

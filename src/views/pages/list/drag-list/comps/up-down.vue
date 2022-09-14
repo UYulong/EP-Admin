@@ -18,9 +18,9 @@
 </template>
 
 <script lang="ts" setup name='DragUpDown'>
+import { DragListDataModel } from 'models/list.d';
 import { Ref } from "vue";
 import draggable from "vuedraggable";
-import { DragListDataModel } from '../../../../models/list.d';
 
 interface DragPropsDataModel {
   modelValue: Array<{

@@ -139,7 +139,8 @@
 
 <script lang="ts" setup name="StepForm">
 import type { FormInstance, FormRules } from 'element-plus';
-import { regExpAmount, regExpBankAccount, regExpEmail, regExpName } from '../../../../utils/libs/regExp';
+import { regExpAmount, regExpBankAccount, regExpEmail, regExpName } from 'utils/libs/regExp';
+
 // 步骤条
 const stepActive = ref(0)
 const jumpNext = (formEl: FormInstance | undefined) => {

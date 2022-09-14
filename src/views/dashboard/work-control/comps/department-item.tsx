@@ -1,4 +1,4 @@
-import Avatar from "../../../../components/avatar/avatar"; // 头像组件
+import Avatar from "comps/avatar/avatar"; // 头像组件
 import './style/department-item.scss'; // css
 
 export default defineComponent({

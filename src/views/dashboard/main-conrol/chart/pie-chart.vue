@@ -6,9 +6,9 @@
 </template>
 
 <script lang="ts" setup name="PieChart">
+import { usePieEcharts } from "hooks/usePieChart";
+import { PieChartDataModel } from "models/dashboard";
 import { Ref } from "vue";
-import { usePieEcharts } from "../../../../hooks/usePieChart";
-import { PieChartDataModel } from "../../../../models/dashboard";
 
 const props = defineProps<{
   pieData: PieChartDataModel;

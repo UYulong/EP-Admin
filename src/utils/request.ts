@@ -1,8 +1,8 @@
 // 暂时使用js
 import axios from "axios";
 import { ElMessage, ElMessageBox } from "element-plus";
-import useLoginStore from "../store/modules/login";
-import { getToken } from "../utils/storage";
+import useLoginStore from "store/modules/login";
+import { getToken } from "utils/storage";
 
 const http = axios.create({
   baseURL: "/api",
@@ -17,7 +17,9 @@ http.interceptors.request.use(
     if (loginStore.token) {
       // 如果用户token存在，则每次发送ajax请求携带
       // 字段为 Authorisation
-      config.headers["Authorisation"] = getToken();
+      if (config.headers) {
+        config.headers["Authorisation"] = getToken() as string;
+      }
     }
     return config;
   },

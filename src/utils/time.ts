@@ -15,5 +15,4 @@ export function getTime(time: number): string {
   const ss = cacheTime.getSeconds().toString().padStart(2, '0')
 
   return `${Y}-${M}-${D} ${hh}:${mm}:${ss}`
-  
 }

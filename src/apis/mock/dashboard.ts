@@ -1,4 +1,4 @@
-import requset from "../../utils/request";
+import requset from "utils/request";
 
 enum Api {
   GET_SUMMARY_LIST = "/dashboard/mainControl",

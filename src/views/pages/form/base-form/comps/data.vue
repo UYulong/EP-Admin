@@ -33,9 +33,9 @@
 </template>
 
 <script lang="ts" setup name='CompsData'>
-import { DepObjModel } from '../../../../../models/form';
-import useSetForm from '../../../../../store/modules/form';
-import { getTime } from '../../../../../utils/time';
+import { DepObjModel } from 'models/form';
+import useSetForm from 'store/modules/form';
+import { getTime } from 'utils/time';
 
 const store = useSetForm()
 

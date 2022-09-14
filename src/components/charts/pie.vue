@@ -6,9 +6,9 @@
 </template>
 
 <script lang="ts" setup name='CommonPieChart'>
+import { usePieEcharts } from 'hooks/usePieChart';
+import { PieDataModel } from 'models/dashboard';
 import { Ref } from 'vue';
-import { usePieEcharts } from '../../hooks/usePieChart';
-import { PieDataModel } from '../../models/dashboard';
 
 interface EChartsDomModel {
   width: string,

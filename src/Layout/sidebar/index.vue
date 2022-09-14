@@ -14,7 +14,7 @@ import Logo from "./logo/index"; // logo 组件
 import Menu from "./menu/index.vue";
 
 // logo 是否显示
-import { project_logo_isShow } from "../../utils/settings";
+import { project_logo_isShow } from "utils/settings";
 </script>
 
 <style lang="scss" scoped>

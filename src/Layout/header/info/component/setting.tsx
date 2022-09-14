@@ -1,5 +1,5 @@
 import { Setting } from "@element-plus/icons-vue";
-import useSetDrawer from "../../../../store/modules/drawer";
+import useSetDrawer from "store/modules/drawer";
 
 // 锁屏组件
 export default defineComponent({

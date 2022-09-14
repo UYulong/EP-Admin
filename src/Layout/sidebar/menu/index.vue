@@ -23,9 +23,9 @@
 </template>
 
 <script lang="ts" setup>
+import useSetCollapse from "store/modules/side"; // 侧边栏缩放状态store
+import variables from "styles/var/variable.module.scss"; // css variable
 import { useRoute, useRouter } from "vue-router";
-import useSetCollapse from "../../../store/modules/side"; // 侧边栏缩放状态store
-import variables from "../../../styles/var/variable.module.scss"; // css variable
 import SidebarItem from "./SidebarItem.vue"; // 子菜单组件
 
 // 计算侧边栏是否展开

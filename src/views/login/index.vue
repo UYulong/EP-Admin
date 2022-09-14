@@ -54,9 +54,9 @@
 </template>
 
 <script lang="ts" setup>
-import { project_title } from "../../utils/settings"; // 项目配置-名称
-import Remember from "./components/Remember.vue"; // 记住密码组建
-import Retrive from "./components/Retrive.vue"; // 找回密码组建
+import { project_title } from "utils/settings"; // 项目配置-名称
+import Remember from "./comps/Remember.vue"; // 记住密码组建
+import Retrive from "./comps/Retrive.vue"; // 找回密码组建
 
 // login hooks
 import { useLogin } from "./use-login";

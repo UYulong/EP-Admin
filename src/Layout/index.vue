@@ -22,12 +22,7 @@
         </el-header>
         <el-main>
           <!-- 主区 -->
-          <router-view v-slot="{ Component }">
-            <transition :enter-active-class="`animate__animated animate__fadeIn`">
-              <component :is="Component" />
-            </transition>
-          </router-view>
-          <!-- <router-view /> -->
+          <Main />
         </el-main>
       </el-container>
     </el-container>
@@ -35,9 +30,10 @@
 </template>
 
 <script lang="ts" setup>
-import useSetCollapse from "../store/modules/side"; // store
+import useSetCollapse from "store/modules/side"; // store
 import BarCon from "./header/barCon/barCon"; // 导航栏左侧 面包屑导航组件
 import Info from "./header/info/index.vue"; // 导航栏右侧 个人中心模块
+import Main from './main/index.vue'; //主区出口
 import SideBar from "./sidebar/index.vue"; // 侧边栏组件
 
 // 获取侧边栏当前宽度

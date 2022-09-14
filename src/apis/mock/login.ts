@@ -1,4 +1,4 @@
-import requset from "../../utils/request";
+import requset from "utils/request";
 import { CheckTokenModel, LoginForm } from "../types/login";
 
 enum Api {

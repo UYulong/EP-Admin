@@ -23,10 +23,10 @@
 </template>
 
 <script lang="ts" setup name='SummaryPanel'>
+import { getOutputListData } from 'apis/mock/dashboard'; // api
+import PieChart from 'comps/charts/pie.vue'; // 饼图-组件
+import { PieDataModel } from 'models/dashboard';
 import { Ref } from 'vue';
-import { getOutputListData } from '../../../../apis/mock/dashboard'; // api
-import PieChart from '../../../../components/charts/pie.vue'; // 饼图-组件
-import { PieDataModel } from '../../../../models/dashboard';
 
 const chartData: Ref<PieDataModel[]> = ref([])
 

@@ -8,9 +8,9 @@
 
 <script lang="ts" setup name="LineChart">
 import * as echarts from "echarts";
+import { usePieEcharts } from "hooks/usePieChart";
+import { LineDataModel } from "models/dashboard";
 import { Ref } from "vue";
-import { usePieEcharts } from "../../../../hooks/usePieChart";
-import { LineDataModel } from "../../../../models/dashboard";
 
 const props = defineProps<{
   lineData: LineDataModel

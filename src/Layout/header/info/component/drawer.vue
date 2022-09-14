@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup name="Drawer">
-import useSetDrawer from "../../../../store/modules/drawer";
+import useSetDrawer from "store/modules/drawer";
 
 const drawerStore = useSetDrawer(); // drawer store
 </script>

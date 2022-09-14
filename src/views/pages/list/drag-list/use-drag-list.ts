@@ -1,7 +1,6 @@
+import { getDragListData } from 'apis/mock/list';
+import { DragListDataModel } from 'models/list';
 import { Ref } from 'vue';
-import { getDragListData } from '../../../../apis/mock/list';
-import { DragListDataModel } from '../../../../models/list';
-
 
 export const useDragList = () => {
   // 上下拖动 - 数据管理

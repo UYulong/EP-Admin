@@ -1,6 +1,6 @@
 import { Fold } from "@element-plus/icons-vue";
+import useSetCollapse from "store/modules/side";
 import { useRoute } from "vue-router";
-import useSetCollapse from "../../../store/modules/side";
 import "./barCon.scss";
 
 export default defineComponent({
