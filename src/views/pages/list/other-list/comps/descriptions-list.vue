@@ -1,6 +1,6 @@
 <template>
   <!-- 描述列表 -->
-  <el-card shadow="nerver">
+  <el-card shadow="never">
     <template #header>
       <div class="card-header">
         <span>描述列表</span>

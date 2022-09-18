@@ -18,9 +18,9 @@ export default {
       meta: { title: "拖拽列表" },
     },
     {
-      path: "descriptions-list",
-      name: "Descriptions-List",
-      component: () => import("views/pages/list/descriptions-list/index.vue"),
+      path: "other-list",
+      name: "Other-List",
+      component: () => import("views/pages/list/other-list/index.vue"),
       meta: { title: "其他列表" },
     },
   ]

@@ -64,16 +64,6 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
       // roles: ["admin", "editor"],
     },
     children: [
-      {
-        path: "basic-form",
-        name: "Basic-Form",
-        component: () => import("views/form/index.vue"),
-        meta: {
-          title: "表单详情",
-          icon: "el-icon-home",
-          // roles: ["admin", "editor"],
-        },
-      },
     ],
   },
 

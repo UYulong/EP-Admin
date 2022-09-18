@@ -4,12 +4,7 @@ import { resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite"; // 配置自动导入vue钩子
 import { defineConfig } from "vite";
 import { viteMockServe } from "vite-plugin-mock"; // mock
-// const resolve = (dir: string): string => path.join(__dirname, dir)
-// const pathResolve = (dir: string): string => {
-//   return resolve(__dirname, '.',  dir)
-// }
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: [

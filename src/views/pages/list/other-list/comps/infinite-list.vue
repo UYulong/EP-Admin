@@ -1,7 +1,7 @@
 <template>
   <el-card
     class="other-list__infinite-list"
-    shadow="nerver"
+    shadow="never"
   >
     <template #header>
       <div class="card-header">

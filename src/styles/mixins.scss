@@ -4,3 +4,16 @@
 @mixin pd-style {
   padding: 10px 15px;
 }
+
+/* 卡片组件 Card header 样式 */
+@mixin card-header {
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-weight: 500;
+    }
+  }
+}

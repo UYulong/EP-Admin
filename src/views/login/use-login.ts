@@ -1,5 +1,5 @@
-import { router } from "../../router";
-import useLoginStore from "../../store/modules/login";
+import { router } from "routes/index";
+import useLoginStore from "store/modules/login";
 import { userLoginForm } from "./model/userForm.modle";
 
 // 登录逻辑
