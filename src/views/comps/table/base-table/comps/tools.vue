@@ -4,7 +4,11 @@
     <div>当数据量动态变化时，可以通过设置table的最大高度，来显示滚动条。</div>
     <div class="table-tools__tools-box">
       <!-- 刷新 -->
-      <el-tooltip effect="dark" content="刷新数据" placement="top">
+      <el-tooltip
+        effect="dark"
+        content="刷新数据"
+        placement="top"
+      >
         <el-icon
           style="margin-right: 15px; cursor: pointer"
           :size="20"
@@ -21,7 +25,10 @@
         @command="handleCommandEvent"
       >
         <span>
-          <el-icon :size="20" style="margin-right: 15px; cursor: pointer">
+          <el-icon
+            :size="20"
+            style="margin-right: 15px; cursor: pointer"
+          >
             <Magnet />
           </el-icon>
         </span>
@@ -51,10 +58,20 @@
       </el-dropdown>
 
       <!-- 表格排列 -->
-      <el-dropdown placement="bottom-end" trigger="click">
+      <el-dropdown
+        placement="bottom-end"
+        trigger="click"
+      >
         <span>
-          <el-tooltip effect="dark" content="表格设置" placement="top">
-            <el-icon :size="20" style="margin-right: 15px; cursor: pointer">
+          <el-tooltip
+            effect="dark"
+            content="表格设置"
+            placement="top"
+          >
+            <el-icon
+              :size="20"
+              style="margin-right: 15px; cursor: pointer"
+            >
               <Setting />
             </el-icon>
           </el-tooltip>
@@ -76,7 +93,11 @@
                   size="small"
                 />
               </div>
-              <el-button type="primary" link @click="handleResetTableEvent">
+              <el-button
+                type="primary"
+                link
+                @click="handleResetTableEvent"
+              >
                 重置
               </el-button>
             </div>
