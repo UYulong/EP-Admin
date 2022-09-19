@@ -12,16 +12,6 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     'vue/multi-word-component-names': 'off',
-    'vue/max-attributes-per-line': [
-      'error',
-      {
-        singleline: {
-          max: 1
-        },
-        multiline: {
-          max: 1
-        }
-      }
-    ]
+    'vue/max-attributes-per-line': 'off'
   }
 }

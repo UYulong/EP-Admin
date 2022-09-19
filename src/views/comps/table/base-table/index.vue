@@ -5,11 +5,7 @@
       <template #header>
         <div class="card-header">
           <span>基础表格</span>
-          <el-button
-            type="primary"
-            link
-            @click="handleOnAddItem"
-          >
+          <el-button type="primary" link @click="handleOnAddItem">
             增加
           </el-button>
         </div>
@@ -53,11 +49,7 @@
             />
           </template>
 
-          <el-table-column
-            fixed="right"
-            label="Operations"
-            align="center"
-          >
+          <el-table-column fixed="right" label="Operations" align="center">
             <template #default="scope">
               <el-button
                 link
