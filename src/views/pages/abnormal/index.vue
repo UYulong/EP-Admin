@@ -2,7 +2,9 @@
   <div>
     <Result :title="status" :sub-title="subTitleMap[status]" :status="status">
       <template #extra>
-        <el-button type="primary" @click="goHome(status)"> Back </el-button>
+        <el-button type="primary" @click="goHome(status)">
+          Back
+        </el-button>
       </template>
     </Result>
   </div>
