@@ -1,36 +1,35 @@
-
 // 异常页面 - 展示
 export default {
-  path: "abnormal",
+  path: 'abnormal',
   hidden: false,
   name: 'Abnormal',
   meta: {
-    title: "异常页面"
+    title: '异常页面'
   },
   children: [
     {
-      path: "401",
-      name: "page401",
-      component: () => import("views/pages/abnormal/401.vue"),
+      path: '403',
+      name: 'page403',
+      component: () => import('views/pages/abnormal/index.vue'),
       meta: {
-        title: "401页面",
-      },
+        title: '403页面'
+      }
     },
     {
-      path: "403",
-      name: "page403",
-      component: () => import("views/pages/abnormal/404.vue"),
+      path: '404',
+      name: 'page404',
+      component: () => import('views/pages/abnormal/index.vue'),
       meta: {
-        title: "404页面",
-      },
+        title: '404页面'
+      }
     },
     {
-      path: "500",
-      name: "page500",
-      component: () => import("views/pages/abnormal/500.vue"),
+      path: '500',
+      name: 'page500',
+      component: () => import('views/pages/abnormal/index.vue'),
       meta: {
-        title: "500页面",
-      },
-    },
-  ],
-};
+        title: '500页面'
+      }
+    }
+  ]
+}
