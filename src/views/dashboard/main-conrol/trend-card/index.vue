@@ -23,7 +23,9 @@
       </div>
       <div class="body_percent">
         <p>
-          <span class="percent_text">日同比：</span>
+          <span class="percent_text">
+            日同比：
+          </span>
           <count-to
             :end-val="list.dayPercent"
             class="percec_num"
@@ -34,7 +36,9 @@
           </span>
         </p>
         <p>
-          <span class="percent_text">周同比：</span>
+          <span class="percent_text">
+            周同比：
+          </span>
           <count-to
             class="percec_num"
             :end-val="list.weekPercent"

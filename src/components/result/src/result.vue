@@ -8,21 +8,30 @@
 
     <!-- 标题 -->
     <div class="result-title">
-      <slot v-if="title" name="title">
+      <slot
+        v-if="title"
+        name="title"
+      >
         <p>{{ title }}</p>
       </slot>
     </div>
 
     <!-- 副标题 -->
     <div class="result-sub-title">
-      <slot v-if="subTitle" name="subTitle">
+      <slot
+        v-if="subTitle"
+        name="subTitle"
+      >
         <p>{{ subTitle }}</p>
       </slot>
     </div>
 
     <!-- 操作按钮 -->
     <div class="result-btn">
-      <slot v-if="$slots.extra" name="extra">
+      <slot
+        v-if="$slots.extra"
+        name="extra"
+      >
         {{ $slots.extra() }}
       </slot>
     </div>

@@ -6,7 +6,9 @@
         <el-card>
           <template #header>
             <div class="card-header">
-              <span class="card-header__text">上下拖动</span>
+              <span class="card-header__text">
+                上下拖动
+              </span>
               <el-button 
                 type="primary"
                 link
@@ -34,7 +36,9 @@
                 v-for="(item, index) in poemsSnowSourceList" 
                 :key="item.id"
               >
-                <span class="drag-list__list-index">{{ index + 1 }}  |</span> 
+                <span class="drag-list__list-index">
+                  {{ index + 1 }}  |
+                </span> 
                 <span>{{ item }}</span>
               </li>
             </ul>
@@ -47,7 +51,9 @@
         <el-card>
           <template #header>
             <div class="card-header">
-              <span class="card-header__text">左右拖动</span>
+              <span class="card-header__text">
+                左右拖动
+              </span>
               <el-button 
                 type="primary"
                 link
@@ -80,7 +86,9 @@
                     v-for="(item, index) in poemsLeftSourceData" 
                     :key="item.id"
                   >
-                    <span class="drag-list__list-index">{{ index + 1 }}  |</span> 
+                    <span class="drag-list__list-index">
+                      {{ index + 1 }}  |
+                    </span> 
                     <span>{{ item }}</span>
                   </li>
                 </ul>
@@ -94,7 +102,9 @@
                     v-for="(item, index) in poemsRightSourceData" 
                     :key="item.id"
                   >
-                    <span class="drag-list__list-index">{{ index + 1 }}  |</span> 
+                    <span class="drag-list__list-index">
+                      {{ index + 1 }}  |
+                    </span> 
                     <span>{{ item }}</span>
                   </li>
                 </ul>

@@ -5,28 +5,44 @@
       class="base-form__data-source"
     >
       <li>
-        <span class="index"> 1 |</span>  工号：{{ formList.jobNum }}
+        <span class="index">
+          1 |
+        </span>  工号：{{ formList.jobNum }}
       </li>
       <li>
-        <span class="index"> 2 |</span>  姓名：{{ formList.name }}
+        <span class="index">
+          2 |
+        </span>  姓名：{{ formList.name }}
       </li>
       <li>
-        <span class="index"> 3 |</span>  身份证：{{ formList.idCard }}
+        <span class="index">
+          3 |
+        </span>  身份证：{{ formList.idCard }}
       </li>
       <li>
-        <span class="index"> 4 |</span>  性别：{{ formList.sex }}
+        <span class="index">
+          4 |
+        </span>  性别：{{ formList.sex }}
       </li>
       <li>
-        <span class="index"> 5 |</span>  所属部门：{{ handleDepartment(formList.departmentVal) }}
+        <span class="index">
+          5 |
+        </span>  所属部门：{{ handleDepartment(formList.departmentVal) }}
       </li>
       <li>
-        <span class="index"> 7 |</span>  岗位名称：{{ handlePosts(formList.post) }}
+        <span class="index">
+          7 |
+        </span>  岗位名称：{{ handlePosts(formList.post) }}
       </li>
       <li>
-        <span class="index"> 6 |</span>  生效时间：{{ handleTime(formList.time) }}
+        <span class="index">
+          6 |
+        </span>  生效时间：{{ handleTime(formList.time) }}
       </li>
       <li>
-        <span class="index"> 8 |</span>  备注信息：{{ formList.remarks }}
+        <span class="index">
+          8 |
+        </span>  备注信息：{{ formList.remarks }}
       </li>
     </ul>
   </Transition>

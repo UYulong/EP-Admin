@@ -21,9 +21,27 @@
       </div>
 
       <div class="right">
-        <p><span class="statistics_text">代办</span><span class="statistics_num">2/10</span></p>
-        <p><span class="statistics_text">项目</span><span class="statistics_num">8</span></p>
-        <p><span class="statistics_text">团队</span><span class="statistics_num">431</span></p>
+        <p>
+          <span class="statistics_text">
+            代办
+          </span><span class="statistics_num">
+            2/10
+          </span>
+        </p>
+        <p>
+          <span class="statistics_text">
+            项目
+          </span><span class="statistics_num">
+            8
+          </span>
+        </p>
+        <p>
+          <span class="statistics_text">
+            团队
+          </span><span class="statistics_num">
+            431
+          </span>
+        </p>
       </div>
     </div>
   </el-card>

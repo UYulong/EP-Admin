@@ -3,7 +3,9 @@
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="card-hader__text">部门简介</span>
+        <span class="card-hader__text">
+          部门简介
+        </span>
         <el-link
           type="primary"
           :underline="false"

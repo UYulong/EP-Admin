@@ -3,7 +3,9 @@
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="card-hader__text">工作进度</span>
+        <span class="card-hader__text">
+          工作进度
+        </span>
         <el-link
           type="primary"
           :underline="false"

@@ -1,8 +1,14 @@
 <template>
   <div class="svg-container">
     <template v-if="status === '403'">
-      <svg width="254" height="294">
-        <g fill="none" fill-rule="evenodd">
+      <svg
+        width="254"
+        height="294"
+      >
+        <g
+          fill="none"
+          fill-rule="evenodd"
+        >
           <path
             d="M0 129.023v-2.084C0 58.364 55.591 2.774 124.165 2.774h2.085c68.574 0 124.165 55.59 124.165 124.165v2.084c0 68.575-55.59 124.166-124.165 124.166h-2.085C55.591 253.189 0 197.598 0 129.023"
             fill="#E4EBF7"
@@ -278,9 +284,15 @@
     </template>
 
     <template v-if="status === '404'">
-      <svg width="254" height="294">
+      <svg
+        width="254"
+        height="294"
+      >
         <defs><path d="M0 .387h251.772v251.772H0z" /></defs>
-        <g fill="none" fill-rule="evenodd">
+        <g
+          fill="none"
+          fill-rule="evenodd"
+        >
           <g transform="translate(0 .012)">
             <mask fill="#fff" />
             <path
@@ -565,12 +577,18 @@
     </template>
 
     <template v-if="status === '500'">
-      <svg width="254" height="294">
+      <svg
+        width="254"
+        height="294"
+      >
         <defs>
           <path d="M0 .335h253.49v253.49H0z" />
           <path d="M0 293.665h253.49V.401H0z" />
         </defs>
-        <g fill="none" fill-rule="evenodd">
+        <g
+          fill="none"
+          fill-rule="evenodd"
+        >
           <g transform="translate(0 .067)">
             <mask fill="#fff" />
             <path
