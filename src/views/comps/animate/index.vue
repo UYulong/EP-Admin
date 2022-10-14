@@ -66,9 +66,7 @@
               <div
                 v-show="entrancesBoxIsShow"
                 :class="ns.e('box')"
-              >
-                11
-              </div>
+              />
             </transition>
           </div>
         </el-card>
@@ -132,9 +130,7 @@
               <div
                 v-show="exitsBoxIsShow"
                 :class="ns.e('box')"
-              >
-                11
-              </div>
+              />
             </transition>
           </div>
         </el-card>
@@ -197,18 +193,24 @@
               <div
                 v-show="otherBoxIsShow"
                 :class="ns.e('box')"
-              >
-                11
-              </div>
+              />
             </transition>
           </div>
         </el-card>
+      </el-col>
+    </el-row>
+
+    <!-- count animate -->
+    <el-row>
+      <el-col>
+        <AutoCount />
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script lang="ts" setup name="Animate">
+import AutoCount from './auto-count.vue'
 import { useNamespace } from "hooks/index";
 import { useAnimate } from "./use-animate";
 const ns = useNamespace("transform");
@@ -238,8 +240,6 @@ const {
 @use "../../../hooks/use-namespace/styles/mixins" as *;
 
 @include b(transform) {
-  color: aqua;
-
   @include e(card-header) {
     display: flex;
     justify-content: space-between;

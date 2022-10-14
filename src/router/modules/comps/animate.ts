@@ -2,6 +2,6 @@
 export default {
   path: 'animate',
   name: ' Animate',
-  meta: { title: '动画组件' },
+  meta: { title: '动效' },
   component: () => import('views/comps/animate/index.vue')
 }
