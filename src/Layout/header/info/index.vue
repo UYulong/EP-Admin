@@ -4,6 +4,7 @@
     <!-- 搜索区域 -->
 
     <!-- git 地址 -->
+    <div>1234</div>
 
     <!-- 锁屏 -->
     <div class="personal_lock">

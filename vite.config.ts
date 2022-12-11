@@ -63,4 +63,7 @@ export default defineConfig({
     }),
     viteMockServe(),
   ],
+  server: {
+    hmr:true,
+  }
 })

@@ -2,6 +2,7 @@ import Layout from "layout/index.vue"; // layout
 import Abnormal from "./abnormal"; // 异常页面
 import Form from './form'; // 表单页面
 import List from "./list"; // 列表页面
+import Personal from "./personal"; // 列表页面
 
 // 页面
 export default {
@@ -13,6 +14,7 @@ export default {
   children: [
     List, // 列表页面
     Form, // 表单页面
-    Abnormal // 异常页面
+    Abnormal, // 异常页面
+    Personal, // 个人页面
   ],
 };

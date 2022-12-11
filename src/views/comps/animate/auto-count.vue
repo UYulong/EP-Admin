@@ -48,9 +48,6 @@
     <!-- 代码块展示 -->
     <div class="code-box">
       <CodeMirror :code="codeHTML" />
-      <!-- <p class="code-html">
-        {{ codeHTML }}
-      </p> -->
     </div>
 
     <!-- 数字动画 -->

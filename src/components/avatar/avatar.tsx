@@ -5,9 +5,13 @@ export default defineComponent({
       type: String,
       default: ''
     },
+    size: {
+      type: [String, Number],
+      default: ''
+    }
   },
 
   setup(props, ctx) {
-    return () => <el-avatar src={props.src} />;
+    return () => <el-avatar src={props.src} size={props.size} />;
   },
 });
