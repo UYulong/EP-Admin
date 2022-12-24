@@ -209,10 +209,10 @@
   </div>
 </template>
 
-<script lang="ts" setup name="Animate">
+<script lang="ts" setup name="AnimateNum">
 import AutoCount from './auto-count.vue'
 import { useNamespace } from "hooks/index";
-import { useAnimate } from "./use-animate";
+import { useAnimate } from "../use-animate";
 const ns = useNamespace("transform");
 
 const {
@@ -237,7 +237,7 @@ const {
 </script>
 
 <style lang="scss" scoped>
-@use "../../../hooks/use-namespace/styles/mixins" as *;
+@use "../../../../hooks/use-namespace/styles/mixins" as *;
 
 @include b(transform) {
   @include e(card-header) {
