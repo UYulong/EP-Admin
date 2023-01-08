@@ -18,6 +18,7 @@
     "@vueuse/core": "^9.0.2",
     "animate.css": "^4.1.1",
     "axios": "^0.27.2",
+    "big.js": "^6.2.1",
     "codemirror": "^6.0.1",
     "commitizen": "^4.2.5",
     "dayjs": "^1.11.5",
@@ -35,6 +36,7 @@
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
+    "@types/big.js": "^6.1.6",
     "@types/node": "^18.0.6",
     "@types/nprogress": "^0.2.0",
     "@types/path-browserify": "^1.0.0",

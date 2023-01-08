@@ -15,6 +15,7 @@ import About from './modules/about' // 关于页面
 import Comps from './modules/comps' // 自定义组件展示页面
 import Docs from './modules/docs' // 文档页面
 import Pages from './modules/pages' // 页面
+import Plugins from './modules/plugins' // 页面
 
 // 静态路由
 export const constantRoutes: Array<RouteRecordRaw> = [
@@ -35,7 +36,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       {
         path: 'home',
         name: 'Home',
-        component: () => import('@/views/dashboard/main-conrol/index.vue'),
+        component: () => import('@/views/dashboard/main-control/index.vue'),
         meta: { title: '主控台' }
       },
       {
@@ -48,8 +49,9 @@ export const constantRoutes: Array<RouteRecordRaw> = [
   },
   Pages,
   Comps,
+  Plugins,
   About,
-  Docs
+  Docs,
 ]
 
 // 异步路由
