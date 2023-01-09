@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-import useSetCollapse from "store/modules/side"; // store
+import { useSetCollapse } from "@/store"; // store
 import BarCon from "./header/barCon/barCon"; // 导航栏左侧 面包屑导航组件
 import Info from "./header/info/index.vue"; // 导航栏右侧 个人中心模块
 import Main from './main/index.vue'; //主区出口

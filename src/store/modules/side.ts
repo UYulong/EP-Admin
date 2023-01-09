@@ -6,8 +6,8 @@ const useSetCollapse = defineStore({
 
   state: () => {
     return {
-      isCollapse: false,
-      sideWidth: 210,
+      isCollapse: true,
+      sideWidth: 63,
     };
   },
 

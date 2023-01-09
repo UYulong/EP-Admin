@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import useSetCollapse from "store/modules/side"; // 侧边栏缩放状态store
+import { useSetCollapse } from "@/store"; // 侧边栏缩放状态store
 import variables from "styles/var/variable.module.scss"; // css variable
 import { useRoute, useRouter } from "vue-router";
 import SidebarItem from "./SidebarItem.vue"; // 子菜单组件

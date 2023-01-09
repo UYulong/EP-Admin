@@ -1,15 +1,15 @@
 import type { FormInstance, FormRules } from 'element-plus';
 import { DepartmentDataModel, PostsDataModel } from 'models/form';
-import useSetForm from 'store/modules/form';
+import { useSetForm } from '@/store';
 import { regExpIdCard, regExpName } from 'utils/libs/regExp';
 import { Ref } from 'vue';
 
 const departments: Array<DepartmentDataModel> = [
-  {label: '研发部', value: 'rd'},
-  {label: '市场营销部', value: 'mktg'},
-  {label: '财务部', value: 'finance'},
-  {label: '人力资源部', value: 'hrd'},
-  {label: '后勤保障部', value: 'logistics'},
+  { label: '研发部', value: 'rd' },
+  { label: '市场营销部', value: 'mktg' },
+  { label: '财务部', value: 'finance' },
+  { label: '人力资源部', value: 'hrd' },
+  { label: '后勤保障部', value: 'logistics' },
 ]
 
 const posts: PostsDataModel = {
@@ -116,7 +116,7 @@ export const useForm = () => {
     await formEl.validate((valid, fields) => {
       if (valid) {
         console.log('submit!')
-        
+
         store.setFormData(baseFormData) // 提交数据
         store.setIsShow(true) // 设置右侧数据为显示状态
       } else {

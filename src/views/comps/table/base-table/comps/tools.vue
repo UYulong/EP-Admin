@@ -137,7 +137,7 @@
 
 <script lang="ts" setup name="TableTools">
 import { storeToRefs } from 'pinia'
-import useSetTable from 'store/modules/table'
+import { useSetTable } from '@/store'
 import draggable from 'vuedraggable'
 
 const tableStore = useSetTable()

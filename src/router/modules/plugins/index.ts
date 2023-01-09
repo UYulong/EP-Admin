@@ -14,5 +14,11 @@ export default {
       component: () => import('@/views/plugins/math/index.vue'),
       meta: { title: '算数加减' }
     },
+    {
+      path: 'editor',
+      name: 'Editor',
+      component: () => import('@/views/plugins/editor/index.vue'),
+      meta: { title: '富文本' }
+    },
   ]
 };

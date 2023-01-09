@@ -1,7 +1,7 @@
 <template>
   <Transition name="fade">
-    <ul 
-      v-if="isShow" 
+    <ul
+      v-if="isShow"
       class="base-form__data-source"
     >
       <li>
@@ -50,7 +50,7 @@
 
 <script lang="ts" setup name='CompsData'>
 import { DepObjModel } from 'models/form';
-import useSetForm from 'store/modules/form';
+import { useSetForm } from '@/store';
 import { getTime } from 'utils/time';
 
 const store = useSetForm()

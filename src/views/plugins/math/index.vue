@@ -13,9 +13,9 @@ console.dir(Big);
 
 const num = ref(new Big('111'))
 
-const num2 = new Big(22)
+const num2 =  ref(new Big('222'))
 
-console.log();
+console.log(num.value + num2.value);
 
 
 

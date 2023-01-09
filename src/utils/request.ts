@@ -1,7 +1,7 @@
 // 暂时使用js
 import axios from "axios";
 import { ElMessage, ElMessageBox } from "element-plus";
-import useLoginStore from "store/modules/login";
+import { useLoginStore } from "@/store";
 import { getToken } from "utils/storage";
 
 const http = axios.create({

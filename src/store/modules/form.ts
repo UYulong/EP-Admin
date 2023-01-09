@@ -1,4 +1,4 @@
-// 控制项目配置 抽屉缩放
+// 分布表单
 import { defineStore } from "pinia";
 import { BaseFormDataModel, DataModel } from "../models/form.model";
 

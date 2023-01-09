@@ -79,7 +79,7 @@
 import dayjs from 'dayjs'
 import { ElTable } from 'element-plus'
 import { storeToRefs } from 'pinia'
-import useSetTable from 'store/modules/table'
+import { useSetTable } from '@/store'
 import Tools from './comps/tools.vue' // 工具-组件
 
 const tableStore = useSetTable()

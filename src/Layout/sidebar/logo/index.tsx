@@ -10,7 +10,7 @@ import { project_title } from "../../../utils/settings";
 import "./index.scss";
 
 // import store
-import useSetCollapse from "../../../store/modules/side";
+import { useSetCollapse } from "@/store";
 
 export default defineComponent({
   setup(props, ctx) {
