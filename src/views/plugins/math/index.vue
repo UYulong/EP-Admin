@@ -8,16 +8,12 @@
 <script lang="ts" setup name='Math'>
 import Big from 'big.js';
 
-console.dir(Big);
+const num = ref(new Big('999999999999999999999').plus('1'))
 
+const num2 =  ref(new Big(222 + 79))
 
-const num = ref(new Big('111'))
-
-const num2 =  ref(new Big('222'))
-
-console.log(num.value + num2.value);
-
-
+console.log(num.value);
+console.log(typeof num.value);
 
 </script>
 
