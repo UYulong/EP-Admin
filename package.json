@@ -34,6 +34,7 @@
     "pinia": "^2.0.16",
     "vue": "^3.2.37",
     "vue-codemirror": "^6.1.1",
+    "vue-marquee-text-component": "^2.0.1",
     "vue-router": "4",
     "vue3-autocounter": "^1.0.6",
     "vuedraggable": "^4.1.0"

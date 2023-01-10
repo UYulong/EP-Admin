@@ -4,17 +4,17 @@
     @change="log('change', $event)"
     @focus="log('focus', $event)"
     @blur="log('blur', $event)"
-        :indent-with-tab="indentWithTab"
-        phrases === 'en-us' ? {} : germanPhrases
+
    -->
   <codemirror
     v-model="codeHTML"
-    :phrases="germanPhrases"
     :style="styleObj"
     :placeholder="placeholder"
     :tab-size="tabSize"
     :disabled="disabled"
     :autofocus="autofocus"
+    :indent-with-tab="indentWithTab"
+    :phrases="phrases === 'en-us' ? {} : germanPhrases"
     :extensions="extensions"
     @ready="handleReady"
   />
