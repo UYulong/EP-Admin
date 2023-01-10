@@ -47,7 +47,10 @@
 
     <!-- 代码块展示 -->
     <div class="code-box">
-      <CodeMirror :code="codeHTML" />
+      <CodeMirror
+        v-model="codeHTML"
+        :height="35"
+      />
     </div>
 
     <!-- 数字动画 -->

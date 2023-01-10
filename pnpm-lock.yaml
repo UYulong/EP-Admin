@@ -4,6 +4,7 @@ specifiers:
   '@codemirror/lang-html': ^6.1.2
   '@codemirror/lang-javascript': ^6.1.0
   '@codemirror/lang-json': ^6.0.0
+  '@codemirror/lang-markdown': ^6.0.5
   '@codemirror/theme-one-dark': ^6.1.0
   '@element-plus/icons-vue': ^2.0.6
   '@types/big.js': ^6.1.6
@@ -52,6 +53,7 @@ dependencies:
   '@codemirror/lang-html': 6.1.2
   '@codemirror/lang-javascript': 6.1.0
   '@codemirror/lang-json': 6.0.0
+  '@codemirror/lang-markdown': 6.0.5
   '@codemirror/theme-one-dark': 6.1.0
   '@element-plus/icons-vue': 2.0.9_vue@3.2.39
   '@vueuse/core': 9.2.0_vue@3.2.39
@@ -465,8 +467,30 @@ packages:
       '@lezer/json': 1.0.0
     dev: false
 
+  /@codemirror/lang-markdown/6.0.5:
+    resolution: {integrity: sha512-qH0THRYc2M7pIJoAp6jstXZkv8ZMVhNaBm7Bs4+0SLHhHlwX53txFy98AcPwrfq0Sh8Zi6RAuj9j/GyL8E1MKw==}
+    dependencies:
+      '@codemirror/lang-html': 6.1.2
+      '@codemirror/language': 6.3.2
+      '@codemirror/state': 6.1.2
+      '@codemirror/view': 6.3.1
+      '@lezer/common': 1.0.1
+      '@lezer/markdown': 1.0.2
+    dev: false
+
   /@codemirror/language/6.2.1:
     resolution: {integrity: sha512-MC3svxuvIj0MRpFlGHxLS6vPyIdbTr2KKPEW46kCoCXw2ktb4NTkpkPBI/lSP/FoNXLCBJ0mrnUi1OoZxtpW1Q==}
+    dependencies:
+      '@codemirror/state': 6.1.2
+      '@codemirror/view': 6.3.1
+      '@lezer/common': 1.0.1
+      '@lezer/highlight': 1.1.1
+      '@lezer/lr': 1.2.3
+      style-mod: 4.0.0
+    dev: false
+
+  /@codemirror/language/6.3.2:
+    resolution: {integrity: sha512-g42uHhOcEMAXjmozGG+rdom5UsbyfMxQFh7AbkeoaNImddL6Xt4cQDL0+JxmG7+as18rUAvZaqzP/TjsciVIrA==}
     dependencies:
       '@codemirror/state': 6.1.2
       '@codemirror/view': 6.3.1
@@ -740,6 +764,13 @@ packages:
     resolution: {integrity: sha512-qpB7rBzH8f6Mzjv2AVZRahcm+2Cf7nbIH++uXbvVOL1yIRvVWQ3HAM/saeBLCyz/togB7LGo76qdJYL1uKQlqA==}
     dependencies:
       '@lezer/common': 1.0.1
+    dev: false
+
+  /@lezer/markdown/1.0.2:
+    resolution: {integrity: sha512-8CY0OoZ6V5EzPjSPeJ4KLVbtXdLBd8V6sRCooN5kHnO28ytreEGTyrtU/zUwo/XLRzGr/e1g44KlzKi3yWGB5A==}
+    dependencies:
+      '@lezer/common': 1.0.1
+      '@lezer/highlight': 1.1.1
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
