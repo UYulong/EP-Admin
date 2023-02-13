@@ -17,11 +17,5 @@ export default {
       component: () => import("views/comps/table/drag-table/index.vue"),
       meta: { title: '拖拽表格' }
     },
-    // {
-    //   path: 'basic-table',
-    //   name: 'Basic-Table',
-    //   component: () => import("views/comps/table/base-table/index.vue"),
-    //   meta: { title: '基础表格' }
-    // }
   ]
 };

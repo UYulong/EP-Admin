@@ -1,6 +1,10 @@
 import Layout from 'layout/index.vue' // layout
 import Animate from './animate' // 表格
 import Table from './table' // 表格
+import Calendar from './calendar' // 日历
+
+console.log(Calendar);
+
 
 // 页面
 export default {
@@ -12,6 +16,7 @@ export default {
   name: 'Comps',
   children: [
     Table, // 表格
-    Animate // 动画
+    Animate, // 动画
+    Calendar // 日历
   ]
 }

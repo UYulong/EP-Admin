@@ -24,6 +24,7 @@
         </div>
       </template>
 
+      <!-- 文字滚动 -->
       <MarqueeText
         :paused="isPaused"
         :reverse="isReverse"
@@ -39,6 +40,19 @@
           </li>
         </ul>
       </MarqueeText>
+
+      <!-- 测试文字长度 -->
+      <div
+        ref="divRef"
+        class="box"
+      >
+        <span
+          ref="spanRef"
+          class="text"
+        >
+          1231231231231323sdfsdfsfsdfsfsfsdfsdfsfsfsd1231313哈哈哈哈哈哈哈
+        </span>
+      </div>
     </el-card>
   </div>
 </template>
@@ -49,12 +63,6 @@ import MarqueeText from 'vue-marquee-text-component'
 // text data
 let listData = reactive([
   '这里是第一行数据，没看错就是第一行。。。。。。。。。。。。。。。',
-  '这里是第二行数据，没看错就是第二行。。。。。。。。。。。。。。。',
-  '这里是第三行数据，没看错就是第三行。。。。。。。。。。。。。。。',
-  '这里是第四行数据，没看错就是第四行。。。。。。。。。。。。。。。',
-  '这里是第五行数据，没看错就是第五行。。。。。。。。。。。。。。。',
-  '这里是第六行数据，没看错就是第六行。。。。。。。。。。。。。。。',
-  '这里是第七行数据，没看错就是第七行。。。。。。。。。。。。。。。'
 ])
 
 // is pause
@@ -70,7 +78,6 @@ const handleTextEvent = (v: string) => {
     isReverse.value = !isReverse.value
   }
 }
-
 // mouseenter event
 const handleMouseEnterEvent = () => {
   isPaused.value = true
@@ -79,6 +86,21 @@ const handleMouseEnterEvent = () => {
 const handleMouseLeaveEvent = () => {
   isPaused.value = false
 }
+
+/* 文字长短判断 */
+const divRef = ref<HTMLDivElement | null>(null)
+const spanRef = ref<HTMLSpanElement | null>(null)
+nextTick(() => {
+  const divWidth = divRef.value?.offsetWidth
+  const spanWidth = spanRef.value?.offsetWidth
+  // console.log('div width:', divWidth);
+
+  // console.log('span width:', spanWidth);
+
+  // console.log('compare:', divWidth! > spanWidth!);
+
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -98,6 +120,16 @@ const handleMouseLeaveEvent = () => {
       height: 30px;
       line-height: 30px;
     }
+  }
+}
+
+.box {
+  width: 300px;
+  height: 130px;
+  background-color: gray;
+
+  .text {
+    white-space: nowrap
   }
 }
 </style>
