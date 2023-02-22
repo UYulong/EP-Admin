@@ -1,11 +1,5 @@
 <template>
   <div :class="['ep-container', ns.b()]">
-    <el-icon
-      :size="20"
-      color="red"
-    >
-      <Edit />
-    </el-icon>
     <el-card :class="ns.e('card')">
       <template #header>
         <span>图标</span>
@@ -19,13 +13,13 @@
           placeholder="请选择图标"
           :class="ns.e('select')"
         >
-          <div style="display: flex; width: 400px; padding: 0 5px;">
+          <div style="display: flex; flex-wrap: wrap; width: 500px; padding: 0 5px;">
             <p
               v-for="{ name } in ElementPlusIconsVue"
               :key="name"
             >
               <el-option
-                style="width: 80px; height: 65px; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+                style="width: 100px; height: 65px; display: flex; flex-direction: column; justify-content: center; align-items: center;"
                 :label="name"
                 :value="name"
               >
@@ -34,7 +28,7 @@
                 >
                   <component :is="name" />
                 </el-icon>
-                <span style="font-size: 12px;">
+                <span style="width: 86px; font-size: 12px; text-align: center; word-break: keep-all;">
                   {{ name }}
                 </span>
               </el-option>
@@ -65,12 +59,12 @@ const iconSize = ref(22)
     height: 420px;
 
     @include e(box) {
-      padding-left: 50px;
+      padding-left: 10px;
       margin: 0;
     }
 
     @include e(select) {
-      width: 400px;
+      width: 500px;
     }
   }
 }
