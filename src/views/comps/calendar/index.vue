@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ep-container">
     Calendar page
   </div>
 </template>
@@ -8,6 +8,4 @@
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

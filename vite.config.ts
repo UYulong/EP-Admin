@@ -65,5 +65,6 @@ export default defineConfig({
   ],
   server: {
     hmr:true,
+    open: true,
   }
 })

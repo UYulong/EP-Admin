@@ -2,8 +2,7 @@ import Layout from 'layout/index.vue' // layout
 import Animate from './animate' // 表格
 import Table from './table' // 表格
 import Calendar from './calendar' // 日历
-
-console.log(Calendar);
+import Icons from './icons' // 图标
 
 
 // 页面
@@ -17,6 +16,7 @@ export default {
   children: [
     Table, // 表格
     Animate, // 动画
-    Calendar // 日历
+    Calendar, // 日历
+    Icons
   ]
 }
