@@ -27,7 +27,7 @@ const useLoginStore = defineStore({
 
   actions: {
     // 登录方法
-    login(loginForm: userLoginFormModel) {
+    login(loginForm: userLoginFormModel): any {
       return new Promise(async (resolve, reject) => {
         try {
           const res = await login(loginForm);

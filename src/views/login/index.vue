@@ -67,8 +67,8 @@ const { userLoginForm, handelSubmitEvent } = useLogin();
 .login-page__wrapper {
   width: 100%;
   height: 100%;
-  background: url("../../assets/img/login.jpg") no-repeat;
-  background-size: 1920px 1080px;
+  background: url("../../assets/img/login.jpg") no-repeat center center;
+  background-size: cover;
   position: relative;
   text-align: center;
 

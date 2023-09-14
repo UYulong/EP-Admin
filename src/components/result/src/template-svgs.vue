@@ -917,8 +917,6 @@
 </template>
 
 <script lang="ts" setup name="Svgs">
-import { defineProps } from 'vue'
-
 defineProps<{
   status: string
 }>()

@@ -1,10 +1,10 @@
 import { defineComponent } from "vue";
 
 // logo source
-import logoSrc from "../../../assets/logo.svg";
+import logoSrc from "@/assets/logo.png";
 
 // settings config
-import { project_title } from "../../../utils/settings";
+import { project_title } from "@/utils/settings";
 
 // css resource
 import "./index.scss";

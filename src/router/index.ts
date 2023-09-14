@@ -29,13 +29,13 @@ export const constantRoutes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: Layout,
-    redirect: '/home',
+    redirect: '/maincontrol',
     meta: { title: 'Dashboard', icon: 'Timer' },
     hidden: false,
     children: [
       {
-        path: 'home',
-        name: 'Home',
+        path: 'maincontrol',
+        name: 'MainControl',
         component: () => import('@/views/dashboard/main-control/index.vue'),
         meta: { title: '主控台' }
       },
@@ -47,6 +47,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       }
     ]
   },
+
   Pages,
   Comps,
   Plugins,
