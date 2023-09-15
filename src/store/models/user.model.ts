@@ -26,3 +26,11 @@ export type loginStateModel = {
   token: string | null;
   roles: string[];
 };
+
+/**
+ * @description: 退出
+ */
+export type logoutStateModel = {
+  code: Number;
+  data: string[] | null;
+};

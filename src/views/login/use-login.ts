@@ -1,10 +1,10 @@
 import { useRouter } from 'vue-router'
-import { useLoginStore } from "@/store";
+import { useUserStore } from "@/store";
 import { userLoginForm } from "./model/userForm.modle";
 
 // 登录逻辑
 export const useLogin = () => {
-  const loginStore = useLoginStore(); // store
+  const loginStore = useUserStore(); // store
   const router = useRouter()
 
   const userLoginForm: userLoginForm = reactive({
@@ -17,8 +17,7 @@ export const useLogin = () => {
     // 表单校验...
 
     const { code } = await loginStore.login(userLoginForm);
-
-    if (code === 0) {
+    if (code === 200) {
       router.push("/");
     }
   }

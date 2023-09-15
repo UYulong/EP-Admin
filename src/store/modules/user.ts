@@ -1,16 +1,17 @@
-import { getUserRoles, login } from "apis/mock/login"; // 登录api
 import { defineStore } from "pinia"; // 登录相关 store
+import { getUserRoles, login, logout } from "apis/mock/user"; // 登录api
 import { asyncRoutes } from "routes/index"; // 导入 静态路由 和 动态路由
 import { clearToken, getToken, setToken } from "utils/storage"; // 设置token方法
 import {
   loginStateModel,
+  logoutStateModel,
   userInfoModel,
   userLoginFormModel,
   userRoles
-} from "../models/login.model";
+} from "../models/user.model";
 
-const useLoginStore = defineStore({
-  id: "login",
+const useUserStore = defineStore({
+  id: "user",
 
   state: (): loginStateModel => {
     return {
@@ -30,7 +31,7 @@ const useLoginStore = defineStore({
     login(loginForm: userLoginFormModel): any {
       return new Promise(async (resolve, reject) => {
         try {
-          const res = await login(loginForm);
+          const res: any = await login(loginForm);
           this.setToken(res.token);
           resolve(res);
         } catch (error) {
@@ -59,10 +60,20 @@ const useLoginStore = defineStore({
     },
 
     // 登出方法
-    logout() {
-      console.log("logout");
-      clearToken(); // 清除浏览器中的token
-      this.roles = []; // 清空store中的数据
+    logout(): Promise<logoutStateModel> {
+      return new Promise(async (resolve, reject) => {
+        try {
+          const res: any = await logout();
+          if (res.code === 200) {
+            clearToken(); // 清除浏览器中的token
+            this.roles = []; // 清空store中的数据
+            resolve(res);
+          }
+        } catch (error) {
+          reject(error);
+        }
+      });
+
     },
 
     /**
@@ -116,4 +127,4 @@ const useLoginStore = defineStore({
   },
 });
 
-export default useLoginStore;
+export default useUserStore;

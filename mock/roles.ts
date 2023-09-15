@@ -11,7 +11,7 @@ export default [
 
       if (authorisation && authorisation === userToken) {
         return {
-          code: 0,
+          code: 200,
           message: "获取用户角色成功!",
           data: {
             roles: ["admin"],

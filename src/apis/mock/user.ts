@@ -3,6 +3,7 @@ import { CheckTokenModel, LoginForm } from "../types/login";
 
 enum Api {
   LOGIN_URL = "/login",
+  LOGOUT = "/logout",
   GET_USER_ROLE = "/getRoles",
 }
 
@@ -22,4 +23,11 @@ const getUserRoles = (params: CheckTokenModel) => {
   });
 };
 
-export { login, getUserRoles };
+const logout = () => {
+  return requset({
+    url: Api.LOGOUT,
+    method: "get",
+  });
+};
+
+export { login, getUserRoles, logout };

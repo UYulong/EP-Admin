@@ -7,7 +7,7 @@ export default [
       console.log('body>>>>>>>>', body)
       console.log('query>>>>>>>>', query)
       return {
-        code: 0,
+        code: 200,
         message: 'ok',
         data: null,
       }

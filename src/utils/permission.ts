@@ -4,7 +4,7 @@ import { router } from "routes/index";
 // import { Message } from 'element-ui'
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
-import { useLoginStore } from "@/store"; // loginStore
+import { useUserStore } from "@/store"; // loginStore
 import getPageTitle from "utils/get-page-title"; // set page title
 import { whiteList } from "utils/settings"; // 路由白名单
 import { getToken } from "utils/storage"; // get token from localstorage
@@ -23,7 +23,7 @@ router.beforeEach(async (to, from, next) => {
   // determine whether the user has logged in
   const hasToken = getToken();
 
-  const loginStore = useLoginStore();
+  const loginStore = useUserStore();
 
   if (hasToken) {
     if (to.path === "/login") {

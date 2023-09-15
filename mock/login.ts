@@ -25,4 +25,24 @@ export default [
       };
     },
   },
+
+  {
+    url: "/api/logout",
+    method: "get",
+    response: ({ headers }) => {
+      if (headers.authorisation !== '') {
+        return {
+          code: 200,
+          message: "退出成功",
+          data: null,
+        };
+      }
+
+      return {
+        code: 1000,
+        message: "退出登录失败",
+        data: null,
+      };
+    },
+  },
 ] as MockMethod[];

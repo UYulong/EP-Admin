@@ -11,7 +11,7 @@ export default [
 
       if (authorisation && authorisation === userToken) {
         return {
-          code: 0,
+          code: 200,
           message: '数据获取成功!',
           data: {
             entrances: [

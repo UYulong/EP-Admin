@@ -1,7 +1,7 @@
 // 暂时使用js
 import axios from "axios";
 import { ElMessage, ElMessageBox } from "element-plus";
-import { useLoginStore } from "@/store";
+import { useUserStore } from "@/store";
 import { getToken } from "utils/storage";
 
 const http = axios.create({
@@ -12,7 +12,7 @@ const http = axios.create({
 // 请求拦截
 http.interceptors.request.use(
   (config) => {
-    const loginStore = useLoginStore();
+    const loginStore = useUserStore();
 
     if (loginStore.token) {
       // 如果用户token存在，则每次发送ajax请求携带
@@ -32,11 +32,11 @@ http.interceptors.request.use(
 // 响应拦截
 http.interceptors.response.use(
   (response) => {
-    const loginStore = useLoginStore();
+    const loginStore = useUserStore();
     const res = response.data;
 
-    // 如果状态码不等于0，则为错误情况
-    if (res.code !== 0) {
+    // 如果状态码不等于200，则为错误情况
+    if (res.code !== 200) {
       ElMessage({
         message: res.message || "Error",
         type: "error",
