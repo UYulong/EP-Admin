@@ -37,7 +37,9 @@
     "vue-marquee-text-component": "^2.0.1",
     "vue-router": "^4.2.4",
     "vue3-autocounter": "^1.0.6",
-    "vuedraggable": "^4.1.0"
+    "vuedraggable": "^4.1.0",
+    "vxe-table": "^4.5.11",
+    "xe-utils": "^3.5.13"
   },
   "devDependencies": {
     "@types/big.js": "^6.1.6",
