@@ -22,7 +22,7 @@ export default defineComponent({
         <img class={"logo_wrap_img"} src={logoSrc}></img>
 
         {/* text */}
-        <h1 v-show={!store.isCollapse} class={"logo_wrap_text"}>
+        <h1 v-show={store.isCollapse} class={"logo_wrap_text"}>
           {project_title}
         </h1>
       </div>

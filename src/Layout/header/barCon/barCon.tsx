@@ -1,4 +1,4 @@
-import { Fold } from "@element-plus/icons-vue";
+import { Fold, Expand } from "@element-plus/icons-vue";
 import { useSetCollapse } from "@/store";
 import { useRoute } from "vue-router";
 import "./barCon.scss";
@@ -6,6 +6,9 @@ import "./barCon.scss";
 export default defineComponent({
   setup(props, ctx) {
     const store = useSetCollapse(); // store
+    const isCollapse = computed(() => {
+      return !store.isCollapse;
+    });
 
     // 点击缩放icon时,切换状态
     const handleSwitchBar = () => {
@@ -20,7 +23,7 @@ export default defineComponent({
       <div class={"bar_control_wrap"}>
         {/* 控制侧边栏缩放 icon */}
         <el-icon class={"bar_control_icon"} onclick={handleSwitchBar}>
-          <Fold />
+          {isCollapse.value ? <Expand /> : <Fold />}
         </el-icon>
 
         {/* breadcrumb nav */}

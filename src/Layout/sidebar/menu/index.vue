@@ -31,7 +31,7 @@ import SidebarItem from "./SidebarItem.vue"; // 子菜单组件
 // 计算侧边栏是否展开
 const store = useSetCollapse();
 const isCollapse = computed(() => {
-  return store.isCollapse;
+  return !store.isCollapse;
 });
 
 // 路由菜单集合

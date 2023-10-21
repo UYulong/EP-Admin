@@ -7,7 +7,7 @@ const useSetCollapse = defineStore({
   state: () => {
     return {
       isCollapse: true,
-      sideWidth: 63,
+      sideWidth: 210,
     };
   },
 
@@ -15,6 +15,7 @@ const useSetCollapse = defineStore({
     setCollapse() {
       this.isCollapse = !this.isCollapse;
     },
+
     setSideWidth() {
       this.sideWidth === 210 ? (this.sideWidth = 63) : (this.sideWidth = 210);
     },
